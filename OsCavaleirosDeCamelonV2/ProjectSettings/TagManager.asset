@@ -3,12 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - Platform
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
@@ -38,6 +40,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Fundo
+    uniqueID: 161211951
+    locked: 0
+  - name: FundoFrente
+    uniqueID: 623342165
+    locked: 0
+  - name: Pilastras
+    uniqueID: 1124107491
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
