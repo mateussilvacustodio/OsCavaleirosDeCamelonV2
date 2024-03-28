@@ -109,8 +109,8 @@ public class Goblin : MonoBehaviour
             if(velocidade > 0) {
 
                 velocidade = -velocidade;
-
-            }            
+ 
+            }
 
         }
 
