@@ -152,6 +152,15 @@ public class CharacterMoviment : MonoBehaviour
 
         }
 
+        if(collider.gameObject.name == "Goblim" && isFlasing == false && collider.gameObject.GetComponent<Animator>().GetBool("IsDamaged") == false) {
+
+            characterAnim.SetBool("IsDamaged", true);
+            print("Tomei Dano");
+            StartCoroutine(SairKb());
+            StartCoroutine(Piscar());
+
+        }
+
     }
 
     IEnumerator SairKb() {

@@ -39,7 +39,15 @@ public class Goblin : MonoBehaviour
 
         } else if (goblimAnim.GetBool("IsDamaged") == true) {
 
-            goblimRb.velocity = new Vector2(KBX,KBY);
+            if(this.transform.position.x > characterMoviment.transform.position.x) {
+                
+                goblimRb.velocity = new Vector2(KBX,KBY);
+
+            } else if (this.transform.position.x < characterMoviment.transform.position.x) {
+
+                goblimRb.velocity = new Vector2(-KBX,KBY);
+
+            }
 
         } else if (goblimAnim.GetBool("IsSeeingPlayer") == true) {
 
@@ -124,10 +132,11 @@ public class Goblin : MonoBehaviour
 
         }
 
-        if(collider.gameObject.name == "Arma") {
+        if(collider.gameObject.name == "Arma" && goblimAnim.GetBool("IsDamaged") == false) {
 
-            goblimAnim.SetBool("IsDamaged", true);
             vida -= 10;
+            goblimAnim.SetBool("IsDamaged", true);
+            
 
         }
 
