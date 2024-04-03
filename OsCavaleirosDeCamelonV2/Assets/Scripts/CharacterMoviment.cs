@@ -67,7 +67,7 @@ public class CharacterMoviment : MonoBehaviour
         }
 
         //ataque
-        if(Input.GetKeyDown(KeyCode.Z) && characterAnim.GetBool("IsJumping") == false && characterAnim.GetBool("IsDowning") == false) {
+        if(Input.GetButtonDown("Fire1") && characterAnim.GetBool("IsJumping") == false && characterAnim.GetBool("IsDowning") == false) {
 
             characterAnim.SetBool("IsAttacking", true);
 
