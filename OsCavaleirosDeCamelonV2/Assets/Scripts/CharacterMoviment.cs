@@ -21,6 +21,8 @@ public class CharacterMoviment : MonoBehaviour
     [SerializeField] float tempoKb;
     [SerializeField] SpriteRenderer characterSp;
     public bool isFlasing;
+    [Header("Vida")]
+    [SerializeField] CharacterLife characterLife;
     
     void Start()
     {
@@ -149,6 +151,7 @@ public class CharacterMoviment : MonoBehaviour
             print("Tomei Dano");
             StartCoroutine(SairKb());
             StartCoroutine(Piscar());
+            StartCoroutine(characterLife.LerparValor(10));
 
         }
 
@@ -158,6 +161,7 @@ public class CharacterMoviment : MonoBehaviour
             print("Tomei Dano");
             StartCoroutine(SairKb());
             StartCoroutine(Piscar());
+            StartCoroutine(characterLife.LerparValor(10));
 
         }
 
