@@ -13,7 +13,11 @@ public class Goblin : MonoBehaviour
     [SerializeField] float KBX;
     [SerializeField] float KBY;
     [SerializeField] int vida;
+    [Header("Morte")]
     [SerializeField] GameObject explosao;
+    [SerializeField] Pontuacao pontuacao;
+    [SerializeField] GameObject moedas;
+    [SerializeField] GameObject coracao;
     [Header("Raycast")]
     [SerializeField] float distancia;
     [SerializeField] LayerMask layer;
@@ -23,12 +27,6 @@ public class Goblin : MonoBehaviour
     [SerializeField] BoxCollider2D goblimCollider;
     [SerializeField] BoxCollider2D characterCollider;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         
@@ -164,7 +162,19 @@ public class Goblin : MonoBehaviour
                 KBY = 2;
 
             } else if(vida <= 0) {
+                
+                float rand = Random.Range(1, 3);
 
+                pontuacao.LerparPontuacao();
+                if(rand == 1 ) {
+
+                    Instantiate(moedas, this.transform.position, this.transform.rotation);
+
+                } else if (rand == 2) {
+
+                    Instantiate(coracao, this.transform.position, this.transform.rotation);
+
+                }
                 
                 Instantiate(explosao, this.transform.position, this.transform.rotation);
                 Destroy(this.gameObject);

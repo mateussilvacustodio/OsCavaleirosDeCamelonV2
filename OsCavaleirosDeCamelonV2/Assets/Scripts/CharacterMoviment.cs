@@ -23,13 +23,14 @@ public class CharacterMoviment : MonoBehaviour
     public bool isFlasing;
     [Header("Vida")]
     [SerializeField] CharacterLife characterLife;
+    [Header("Moedas")]
+    [SerializeField] Dinheiro dinheiro;
     
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         //mover
@@ -107,7 +108,21 @@ public class CharacterMoviment : MonoBehaviour
 
             characterAnim.SetBool("IsDowning", false);
 
-        }   
+        }
+
+        if(collision.gameObject.tag == "Moeda") {
+
+            dinheiro.dinheiro += 1;
+            Destroy(collision.gameObject);
+
+        }
+
+        if(collision.gameObject.tag == "Coracao") {
+
+            StartCoroutine(characterLife.LerparValor(-10));
+            Destroy(collision.gameObject);
+
+        }  
 
     }
 
@@ -164,6 +179,15 @@ public class CharacterMoviment : MonoBehaviour
             StartCoroutine(characterLife.LerparValor(10));
 
         }
+
+        if(collider.gameObject.name == "Morte") {
+
+            characterLife.LerparVida();
+            Destroy(this);            
+
+        }
+
+        
 
     }
 

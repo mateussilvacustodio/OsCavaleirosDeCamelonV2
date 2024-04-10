@@ -4,6 +4,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterLife : MonoBehaviour
 {
@@ -23,11 +24,6 @@ public class CharacterLife : MonoBehaviour
     {
 
         vidaImg.fillAmount = vida / vidaMax;
-        if(Input.GetKeyDown(KeyCode.P)) {
-
-            StartCoroutine(LerparValor(15));
-
-        }
 
     }
 
@@ -47,7 +43,17 @@ public class CharacterLife : MonoBehaviour
 
         vida = dano;
 
-        
+        if(vida <= 0) {
+
+            SceneManager.LoadScene("Cena");
+
+        }
+
+    }
+
+    public void LerparVida() {
+
+        StartCoroutine(LerparValor(100));
 
     }
 }

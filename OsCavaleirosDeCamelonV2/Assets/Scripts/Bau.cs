@@ -9,6 +9,9 @@ public class Bau : MonoBehaviour
     [SerializeField] bool podeAbrir;
     [SerializeField] Animator bauAnim;
     [SerializeField] Rigidbody2D QuantMoedas2;
+    [SerializeField] Rigidbody2D QuantMoedas;
+    [SerializeField] MeshRenderer QuantMoedasRd;
+    [SerializeField] Dinheiro dinheiro;
     
     void Start()
     {
@@ -23,8 +26,13 @@ public class Bau : MonoBehaviour
 
             bauAnim.SetBool("IsOpen", true);
             podeAbrir = false;
+            StartCoroutine(dinheiro.LerparValor(5));
             QuantMoedas2.velocity = new Vector2(0, 2.5f);
             Destroy(QuantMoedas2.gameObject, 0.6f);
+            QuantMoedasRd.enabled = true;
+            QuantMoedas.velocity = new Vector2(0, 2.5f);
+            Destroy(QuantMoedas.gameObject, 0.6f);
+
 
         }
 

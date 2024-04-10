@@ -358,6 +358,9 @@ MonoBehaviour:
   KBY: 2
   vida: 30
   explosao: {fileID: 6130155690551159526, guid: 1ab9b8c1ce0d4cb46871ef19f4647f4c, type: 3}
+  pontuacao: {fileID: 0}
+  moedas: {fileID: 7798482280262294744, guid: 7ee635bbe4b0db74dabd25040f10e63d, type: 3}
+  coracao: {fileID: 725780034313587862, guid: f4ad277940688ef42b365d909ff8d666, type: 3}
   distancia: 0.5
   layer:
     serializedVersion: 2
