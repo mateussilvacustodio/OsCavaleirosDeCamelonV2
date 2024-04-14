@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     
+    void Start() {
+
+    }
+    
     public void MudarFase(string fase) {
 
         SceneManager.LoadScene(fase);
