@@ -9,11 +9,6 @@ public class Pontuacao : MonoBehaviour
     [SerializeField] Text text;
     [SerializeField] float pontos;
     [SerializeField] float duracaoLerp;
-
-    void Start()
-    {
-        
-    }
     
     void Update()
     {

@@ -5,9 +5,7 @@ using Unity.VisualScripting.ReorderableList.Element_Adder_Menu;
 using UnityEngine;
 
 public class CharacterMoviment : MonoBehaviour
-{
-    // Start is called before the first frame update
-    
+{    
     [Header("Movimento")]
     [SerializeField] float velocidadeMov;
     public float velocidadePulo;
@@ -25,11 +23,6 @@ public class CharacterMoviment : MonoBehaviour
     [SerializeField] CharacterLife characterLife;
     [Header("Moedas")]
     [SerializeField] Dinheiro dinheiro;
-    
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
@@ -49,7 +42,6 @@ public class CharacterMoviment : MonoBehaviour
             characterRb.velocity = new Vector2(KbX, KbY);
 
         }
-        
 
         //pular
         if(Input.GetButtonDown("Jump") && characterAnim.GetBool("IsJumping") == false && characterAnim.GetBool("IsDowning") == false) {
@@ -185,9 +177,7 @@ public class CharacterMoviment : MonoBehaviour
             characterLife.LerparVida();
             Destroy(this);            
 
-        }
-
-        
+        }        
 
     }
 

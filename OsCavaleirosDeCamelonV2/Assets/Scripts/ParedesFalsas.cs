@@ -9,12 +9,7 @@ public class ParedesFalsas : MonoBehaviour
     [SerializeField] Tilemap paredeRend;
     [SerializeField] float fadeVl;
     [SerializeField] bool isFadding;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -43,7 +38,6 @@ public class ParedesFalsas : MonoBehaviour
             fadeVl = 0.25f;
 
         }
-
 
     }
 

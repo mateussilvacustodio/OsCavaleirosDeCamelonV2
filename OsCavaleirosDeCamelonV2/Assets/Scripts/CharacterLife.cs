@@ -19,7 +19,6 @@ public class CharacterLife : MonoBehaviour
         vida = vidaMax;
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -45,7 +44,7 @@ public class CharacterLife : MonoBehaviour
 
         if(vida <= 0) {
 
-            SceneManager.LoadScene("Cena");
+            SceneManager.LoadScene("Fase1");
 
         }
 

@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Bau : MonoBehaviour
-{
-    // Start is called before the first frame update
-    
+{    
     [SerializeField] bool podeAbrir;
     [SerializeField] Animator bauAnim;
     [SerializeField] Rigidbody2D QuantMoedas2;
@@ -13,12 +11,6 @@ public class Bau : MonoBehaviour
     [SerializeField] MeshRenderer QuantMoedasRd;
     [SerializeField] Dinheiro dinheiro;
     
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -32,7 +24,6 @@ public class Bau : MonoBehaviour
             QuantMoedasRd.enabled = true;
             QuantMoedas.velocity = new Vector2(0, 2.5f);
             Destroy(QuantMoedas.gameObject, 0.6f);
-
 
         }
 
