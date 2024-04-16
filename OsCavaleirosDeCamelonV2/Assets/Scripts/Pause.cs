@@ -2,12 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Pause : MonoBehaviour
 {
     
     [SerializeField] GameObject painel;
-    public bool isPaused;
+    bool isPaused;
+    [SerializeField] CharacterMoviment characterMoviment;
+    
+    void Start() {
+
+        Time.timeScale = 1f;
+
+    }
     
     void Update()
     {
@@ -16,19 +25,39 @@ public class Pause : MonoBehaviour
 
             if(!isPaused) {
 
-                painel.SetActive(true);
-                isPaused = true;
-                Time.timeScale = 0f;
+                Pausar();
                 
             } else {
 
-                painel.SetActive(false);
-                isPaused = false;
-                Time.timeScale = 1f;
+                Play();
 
             }
 
         }
            
+    }
+
+    public void MudarFase(string fase) {
+
+        SceneManager.LoadScene(fase);
+
+    }
+
+    public void Pausar() {
+
+        painel.SetActive(true);
+        characterMoviment.enabled = false;
+        isPaused = true;
+        Time.timeScale = 0f;
+
+    }
+    
+    public void Play() {
+
+        painel.SetActive(false);
+        characterMoviment.enabled = true;
+        isPaused = false;
+        Time.timeScale = 1f;
+
     }
 }

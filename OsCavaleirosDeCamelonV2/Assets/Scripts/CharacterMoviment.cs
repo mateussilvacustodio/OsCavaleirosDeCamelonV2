@@ -175,7 +175,7 @@ public class CharacterMoviment : MonoBehaviour
         if(collider.gameObject.name == "Morte") {
 
             characterLife.LerparVida();
-            Destroy(this);            
+            this.enabled = false;            
 
         }        
 

@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class CharacterLife : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class CharacterLife : MonoBehaviour
     [SerializeField] float vidaMax = 60;
     [SerializeField] float duracaoLerp;
     [SerializeField] Image vidaImg;
-    
+    [SerializeField] GameObject gameOver;
+    [SerializeField] Pause pause;
+     
     void Start()
     {
         vida = vidaMax;
@@ -23,6 +26,14 @@ public class CharacterLife : MonoBehaviour
     {
 
         vidaImg.fillAmount = vida / vidaMax;
+
+        if(vida <= 0) {
+
+            gameOver.SetActive(true);
+            pause.enabled = false;
+            
+
+        }
 
     }
 
@@ -41,12 +52,6 @@ public class CharacterLife : MonoBehaviour
         }
 
         vida = dano;
-
-        if(vida <= 0) {
-
-            SceneManager.LoadScene("Fase1");
-
-        }
 
     }
 
