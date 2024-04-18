@@ -10,12 +10,14 @@ using UnityEngine.EventSystems;
 public class CharacterLife : MonoBehaviour
 {
     
-    [SerializeField] float vida;
+    public float vida;
     [SerializeField] float vidaMax = 60;
     [SerializeField] float duracaoLerp;
     [SerializeField] Image vidaImg;
     [SerializeField] GameObject gameOver;
     [SerializeField] Pause pause;
+    [SerializeField] CharacterMoviment characterMoviment;
+    [SerializeField] BoxCollider2D playerCollider;
      
     void Start()
     {
@@ -31,6 +33,8 @@ public class CharacterLife : MonoBehaviour
 
             gameOver.SetActive(true);
             pause.enabled = false;
+            characterMoviment.enabled = false;
+            playerCollider.enabled = false;
             
 
         }

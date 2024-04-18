@@ -96,9 +96,10 @@ public class CharacterMoviment : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D collision) {
 
-        if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Platform" ) {
+        if(collision.gameObject.CompareTag("Ground") || collision.gameObject.tag == "Platform" ) {
 
             characterAnim.SetBool("IsDowning", false);
+            print("Toquei no chao");
 
         }
 
@@ -175,6 +176,7 @@ public class CharacterMoviment : MonoBehaviour
         if(collider.gameObject.name == "Morte") {
 
             characterLife.LerparVida();
+            characterRb.velocity = new Vector2(0,characterRb.velocity.y);
             this.enabled = false;            
 
         }        

@@ -9,11 +9,12 @@ public class ParallaxMenu : MonoBehaviour
     [SerializeField] float tamanhoInicial;
     [SerializeField] float velocidade;
     [SerializeField] float limite;
+
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class ParallaxMenu : MonoBehaviour
         nuvemSP.size = new Vector2(tamanhoInicial, nuvemSP.size.y);
 
         tamanhoInicial += Time.deltaTime * velocidade;
+        print(Time.deltaTime);    
 
         if(tamanhoInicial >= limite) {
 
