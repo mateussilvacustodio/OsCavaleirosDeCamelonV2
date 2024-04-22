@@ -89,6 +89,7 @@ public class CharacterMoviment : MonoBehaviour
 
             characterAnim.SetBool("IsDowning", true);
             characterAnim.SetBool("IsJumping", false);
+            print("IsDowning");
 
         }
 
@@ -100,6 +101,7 @@ public class CharacterMoviment : MonoBehaviour
 
             characterAnim.SetBool("IsDowning", false);
             print("Toquei no chao");
+            //UnityEditor.EditorApplication.isPlaying = false;
 
         }
 
@@ -124,13 +126,13 @@ public class CharacterMoviment : MonoBehaviour
         if(collision.gameObject.tag == "Platform" && characterRb.velocity.x ==0) {
 
             gameObject.transform.parent= collision.transform;
-            print("Estou colidindo na plaforma e minha velocidade atual é 0");
+            //print("Estou colidindo na plaforma e minha velocidade atual é 0");
         }
 
         if(collision.gameObject.tag == "Platform" && characterRb.velocity.x !=0) {
 
             gameObject.transform.parent= null;
-            print("Estou colidindo na plaforma e minha velocidade atual é diferente de 0");
+            //print("Estou colidindo na plaforma e minha velocidade atual é diferente de 0");
         }
 
     }
