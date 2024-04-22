@@ -82,7 +82,7 @@ public class Goblin : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(this.transform.position, this.transform.TransformDirection(Vector2.left), distancia, layer);
 
-        if(hit && characterMoviment.isFlasing == false) {
+        if(hit && characterMoviment.isFlasing == false && goblimAnim.GetBool("IsDamaged") == false) {
 
             Debug.DrawRay(this.transform.position, this.transform.TransformDirection(Vector2.left * distancia), Color.red);
             Debug.Log(hit.transform.name);
@@ -106,6 +106,8 @@ public class Goblin : MonoBehaviour
             Physics2D.IgnoreCollision(goblimCollider, characterCollider, false);
 
         }
+
+        
     }
 
     void OnTriggerEnter2D (Collider2D collider) {
@@ -134,17 +136,15 @@ public class Goblin : MonoBehaviour
 
             vida -= 10;
             goblimAnim.SetBool("IsDamaged", true);
+            goblimAnim.SetBool("IsSeeingPlayer", false);
             
 
         }
 
-    }
+        //ignorar a colisao com outros goblins
+        if(collider.gameObject.name == "Goblim") {
 
-    void OnCollisionExit2D (Collision2D collision) {
-
-        if(collision.gameObject.tag == "Ground") {
-
-            //print("Saí do chao");
+            Physics2D.IgnoreCollision(goblimCollider, collider.gameObject.GetComponent<BoxCollider2D>(), true);
 
         }
 

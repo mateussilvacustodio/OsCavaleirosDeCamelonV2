@@ -8,8 +8,9 @@ public class Cutscene : MonoBehaviour
 {
     
     [Header("Personagem")]
-    [SerializeField] Rigidbody2D playerCutRB;
+    public Rigidbody2D playerCutRB;
     [SerializeField] float velocidade;
+    [SerializeField] Animator playerCutAnim;
     [Header("Atos")]
     [SerializeField] int ato;
     [Header("Dialogos")]
@@ -38,22 +39,22 @@ public class Cutscene : MonoBehaviour
         if(ato == 0) {
 
             playerCutRB.velocity = new Vector2(velocidade, playerCutRB.velocity.y);
+            playerCutAnim.SetBool("IsMoving", true);
+
+
 
         } else {
 
             playerCutRB.velocity = new Vector2(0, playerCutRB.velocity.y);
+            playerCutAnim.SetBool("IsMoving", false);
             
         }
 
         if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.KeypadEnter)) {
 
-            Debug.Log("Passar dialogo");
             pularDialogo();
 
-        }
-
-        print(Time.deltaTime);
-        
+        }        
 
     }
 

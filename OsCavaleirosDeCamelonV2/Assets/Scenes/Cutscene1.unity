@@ -200,6 +200,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 52447525}
   m_CullTransparentMesh: 1
+--- !u!1 &127244811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 127244812}
+  m_Layer: 0
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &127244812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127244811}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.67952716, y: 0.7161338, z: -0.09321726}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1791588080}
+  - {fileID: 2077564955}
+  - {fileID: 240866569}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &168373009
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +353,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.007332802, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.010416667, y: 0, z: 0.010416667, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.6666667, y: 0.6666667}
     newSize: {x: 22, y: 0.6666667}
@@ -432,6 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 240866569}
   - component: {fileID: 240866568}
+  - component: {fileID: 240866570}
   m_Layer: 0
   m_Name: Pilastras
   m_TagString: Untagged
@@ -484,8 +519,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 28.28, y: 14.14}
+  m_DrawMode: 2
+  m_Size: {x: 36.814457, y: 14.14}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -499,13 +534,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240866567}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.76, y: 0.48, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.3477, y: -0.23613378, z: 0.09321726}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 127244812}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &240866570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240866567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd88773bff545d479c71d33ae49e9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posicao: {fileID: 240866569}
+  velocidade: 0.5
+  characterMoviment: {fileID: 0}
+  cutscene: {fileID: 755504898}
 --- !u!1 &546927608
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +649,7 @@ GameObject:
   - component: {fileID: 755504897}
   - component: {fileID: 755504896}
   - component: {fileID: 755504898}
+  - component: {fileID: 755504899}
   m_Layer: 0
   m_Name: RagnarCut
   m_TagString: Untagged
@@ -666,7 +718,7 @@ Transform:
   m_GameObject: {fileID: 755504893}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.11, y: -1.680853, z: 0}
+  m_LocalPosition: {x: -10.11, y: -1.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -758,6 +810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCutRB: {fileID: 755504896}
   velocidade: 4
+  playerCutAnim: {fileID: 755504899}
   ato: 0
   nomesPlayers: Ragnar
   falasPlayers:
@@ -765,11 +818,32 @@ MonoBehaviour:
   - Sera que esta funcionando
   - Espero que sim
   falasPlayersIndex: 0
-  typeSpeed: 0.01
+  typeSpeed: 0.02
   dialogoObj: {fileID: 52447525}
   nome: {fileID: 1188547741}
   falas: {fileID: 546927610}
   cena: Fase1
+--- !u!95 &755504899
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 755504893}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 20461798c4fd9b546baa6cfa600206fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &923972149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,6 +1264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1791588080}
   - component: {fileID: 1791588079}
+  - component: {fileID: 1791588081}
   m_Layer: 0
   m_Name: Fundo
   m_TagString: Untagged
@@ -1242,8 +1317,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 20, y: 12}
+  m_DrawMode: 2
+  m_Size: {x: 34.89819, y: 12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1257,13 +1332,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791588078}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.065464616, y: 0.012642667, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.7041, y: -0.7034911, z: 0.09321726}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 127244812}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1791588081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791588078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd88773bff545d479c71d33ae49e9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posicao: {fileID: 1791588080}
+  velocidade: 0.7
+  characterMoviment: {fileID: 0}
+  cutscene: {fileID: 755504898}
 --- !u!1 &1843820745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,7 +1495,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 22, y: 1.77}
+  m_Size: {x: 36.856224, y: 1.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1419,7 +1510,7 @@ Transform:
   m_GameObject: {fileID: 2026349428}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.089, y: -4.668598, z: 0}
+  m_LocalPosition: {x: 7.3391, y: -4.668598, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1435,6 +1526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2077564955}
   - component: {fileID: 2077564954}
+  - component: {fileID: 2077564956}
   m_Layer: 0
   m_Name: Castelo
   m_TagString: Untagged
@@ -1487,8 +1579,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 20, y: 12}
+  m_DrawMode: 2
+  m_Size: {x: 31.234701, y: 12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1502,21 +1594,35 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077564953}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: -0.16, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.3378, y: -0.8761338, z: 0.09321726}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 127244812}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2077564956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077564953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd88773bff545d479c71d33ae49e9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posicao: {fileID: 2077564955}
+  velocidade: 0.6
+  characterMoviment: {fileID: 0}
+  cutscene: {fileID: 755504898}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 185638379}
-  - {fileID: 1791588080}
-  - {fileID: 2077564955}
-  - {fileID: 240866569}
+  - {fileID: 127244812}
   - {fileID: 755504895}
   - {fileID: 168373011}
   - {fileID: 2026349430}

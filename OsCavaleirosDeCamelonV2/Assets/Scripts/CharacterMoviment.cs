@@ -11,6 +11,7 @@ public class CharacterMoviment : MonoBehaviour
     public float velocidadePulo;
     public Rigidbody2D characterRb;
     public Animator characterAnim;
+    [SerializeField] bool isOnGround;
     [Header("Ataque")]
     public BoxCollider2D armaCollider;
     [Header("Dano")]
@@ -85,7 +86,7 @@ public class CharacterMoviment : MonoBehaviour
 
         }
         
-        if (characterRb.velocity.y < 0) {
+        if (characterRb.velocity.y < 0 && !isOnGround) {
 
             characterAnim.SetBool("IsDowning", true);
             characterAnim.SetBool("IsJumping", false);
@@ -101,7 +102,7 @@ public class CharacterMoviment : MonoBehaviour
 
             characterAnim.SetBool("IsDowning", false);
             print("Toquei no chao");
-            //UnityEditor.EditorApplication.isPlaying = false;
+            isOnGround = true;
 
         }
 
@@ -139,13 +140,22 @@ public class CharacterMoviment : MonoBehaviour
 
     void OnCollisionExit2D (Collision2D collision) {
 
-        if(collision.gameObject.tag == "Ground" && characterRb.velocity.y < 0 ) {
+        if(collision.gameObject.tag == "Ground") {
 
-            characterAnim.SetBool("IsDowning", true);
+            isOnGround = false;
+
+            if(characterRb.velocity.y < 0) {
+
+                characterAnim.SetBool("IsDowning", true);
+
+            }
+            
+            
         }
 
         if(collision.gameObject.tag == "Platform") {
 
+            isOnGround = false;
             gameObject.transform.parent = null;
             print("Saí da plataforma");
 
@@ -157,8 +167,18 @@ public class CharacterMoviment : MonoBehaviour
 
         if(collider.gameObject.name == "ArmaGoblim") {
 
+            if(collider.transform.position.x < transform.position.x && KbX < 0) {
+
+                KbX *= -1;
+
+            } else if (collider.transform.position.x >= transform.position.x && KbX > 0) {
+
+                KbX *= -1;
+
+            }
+
             characterAnim.SetBool("IsDamaged", true);
-            print("Tomei Dano");
+            characterLife.vidaVerdadeira -= 10;
             StartCoroutine(SairKb());
             StartCoroutine(Piscar());
             StartCoroutine(characterLife.LerparValor(10));
@@ -168,7 +188,7 @@ public class CharacterMoviment : MonoBehaviour
         if(collider.gameObject.name == "Goblim" && isFlasing == false && collider.gameObject.GetComponent<Animator>().GetBool("IsDamaged") == false) {
 
             characterAnim.SetBool("IsDamaged", true);
-            print("Tomei Dano");
+            characterLife.vidaVerdadeira -= 10;
             StartCoroutine(SairKb());
             StartCoroutine(Piscar());
             StartCoroutine(characterLife.LerparValor(10));
@@ -177,6 +197,7 @@ public class CharacterMoviment : MonoBehaviour
 
         if(collider.gameObject.name == "Morte") {
 
+            characterLife.vidaVerdadeira = 0;
             characterLife.LerparVida();
             characterRb.velocity = new Vector2(0,characterRb.velocity.y);
             this.enabled = false;            
@@ -188,8 +209,13 @@ public class CharacterMoviment : MonoBehaviour
     IEnumerator SairKb() {
 
         yield return new WaitForSeconds(tempoKb);
-        characterAnim.SetBool("IsDamaged", false);
+        
+        if(characterLife.vidaVerdadeira > 0) {
 
+            characterAnim.SetBool("IsDamaged", false);
+
+        }
+    
     }
 
     IEnumerator Piscar() {

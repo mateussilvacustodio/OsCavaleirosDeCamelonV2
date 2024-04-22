@@ -11,6 +11,7 @@ public class CharacterLife : MonoBehaviour
 {
     
     public float vida;
+    public float vidaVerdadeira;
     [SerializeField] float vidaMax = 60;
     [SerializeField] float duracaoLerp;
     [SerializeField] Image vidaImg;
@@ -22,6 +23,7 @@ public class CharacterLife : MonoBehaviour
     void Start()
     {
         vida = vidaMax;
+        vidaVerdadeira = vidaMax;
     }
 
     void Update()
@@ -31,12 +33,12 @@ public class CharacterLife : MonoBehaviour
 
         if(vida <= 0) {
 
+            characterMoviment.characterRb.velocity = new Vector2(0,characterMoviment.characterRb.velocity.y);
             gameOver.SetActive(true);
             pause.enabled = false;
             characterMoviment.enabled = false;
             playerCollider.enabled = false;
             
-
         }
 
     }
