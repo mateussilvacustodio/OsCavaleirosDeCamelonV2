@@ -1213,7 +1213,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545677443}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -9070,7 +9070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49650b5d0142d2143b5e8174cad2b318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 60
+  vida: 0
   vidaVerdadeira: 0
   vidaMax: 60
   duracaoLerp: 0.75

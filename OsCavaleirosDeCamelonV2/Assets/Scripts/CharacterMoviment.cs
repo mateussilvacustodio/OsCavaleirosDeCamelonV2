@@ -90,7 +90,7 @@ public class CharacterMoviment : MonoBehaviour
 
             characterAnim.SetBool("IsDowning", true);
             characterAnim.SetBool("IsJumping", false);
-            print("IsDowning");
+            //print("IsDowning");
 
         }
 
@@ -101,7 +101,7 @@ public class CharacterMoviment : MonoBehaviour
         if(collision.gameObject.CompareTag("Ground") || collision.gameObject.tag == "Platform" ) {
 
             characterAnim.SetBool("IsDowning", false);
-            print("Toquei no chao");
+            //print("Toquei no chao");
             isOnGround = true;
 
         }
@@ -116,6 +116,7 @@ public class CharacterMoviment : MonoBehaviour
         if(collision.gameObject.tag == "Coracao") {
 
             StartCoroutine(characterLife.LerparValor(-10));
+            characterLife.vidaVerdadeira += 10;
             Destroy(collision.gameObject);
 
         }  
@@ -157,7 +158,7 @@ public class CharacterMoviment : MonoBehaviour
 
             isOnGround = false;
             gameObject.transform.parent = null;
-            print("Saí da plataforma");
+            //print("Saí da plataforma");
 
         }
 
@@ -177,6 +178,7 @@ public class CharacterMoviment : MonoBehaviour
 
             }
 
+            
             characterAnim.SetBool("IsDamaged", true);
             characterLife.vidaVerdadeira -= 10;
             StartCoroutine(SairKb());
@@ -187,6 +189,7 @@ public class CharacterMoviment : MonoBehaviour
 
         if(collider.gameObject.name == "Goblim" && isFlasing == false && collider.gameObject.GetComponent<Animator>().GetBool("IsDamaged") == false) {
 
+            print("tomei dano");
             characterAnim.SetBool("IsDamaged", true);
             characterLife.vidaVerdadeira -= 10;
             StartCoroutine(SairKb());
