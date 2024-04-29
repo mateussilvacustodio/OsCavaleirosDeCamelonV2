@@ -306,7 +306,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 352511968}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 665683990}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: MudarFase
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fase2
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &352511968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +443,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Op\xE7\xF5es"
+  m_Text: Fase 2
 --- !u!222 &393872230
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -525,14 +537,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 665683990}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: FecharJogo
-        m_Mode: 1
+        m_MethodName: MudarFase
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &416480544
@@ -745,7 +757,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Iniciar
+  m_Text: Fase 1
 --- !u!222 &592837655
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1558,7 +1570,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: SelecaoFase
+          m_StringArgument: Cutscene1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1283482100
@@ -1777,7 +1789,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Os Cavaleiros de Camelon
+  m_Text: Escolha a fase
 --- !u!222 &2028251735
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1872,7 +1884,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sair
+  m_Text: Voltar
 --- !u!222 &2082867337
 CanvasRenderer:
   m_ObjectHideFlags: 0

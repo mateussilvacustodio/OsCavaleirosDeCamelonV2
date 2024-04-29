@@ -80,9 +80,10 @@ public class CharacterMoviment : MonoBehaviour
 
         }
 
-        if(characterRb.velocity.y > 0) {
+        if(characterRb.velocity.y > 0 && !isOnGround) {
 
             characterAnim.SetBool("IsJumping", true);
+            print("IsUpping");
 
         }
         

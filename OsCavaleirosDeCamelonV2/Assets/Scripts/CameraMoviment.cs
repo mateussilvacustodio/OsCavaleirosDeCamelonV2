@@ -6,6 +6,7 @@ public class CameraMoviment : MonoBehaviour
 {
     
     [SerializeField] Transform CharacterT;
+    [SerializeField] float limiteX;
     void Update()
     {
         
@@ -13,9 +14,9 @@ public class CameraMoviment : MonoBehaviour
 
             transform.position = new Vector3(-10f, transform.position.y, transform.position.z);
 
-        } else if (CharacterT.position.x > 95) {
+        } else if (CharacterT.position.x > limiteX) {
 
-            transform.position = new Vector3(95, transform.position.y, transform.position.z);
+            transform.position = new Vector3(limiteX, transform.position.y, transform.position.z);
 
         } else {
 
