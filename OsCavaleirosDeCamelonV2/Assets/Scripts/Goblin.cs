@@ -26,6 +26,7 @@ public class Goblin : MonoBehaviour
     [SerializeField] CharacterMoviment characterMoviment;
     [SerializeField] BoxCollider2D goblimCollider;
     [SerializeField] BoxCollider2D characterCollider;
+    public float ataque;
 
     void Update()
     {
@@ -165,7 +166,7 @@ public class Goblin : MonoBehaviour
                 
                 float rand = Random.Range(1, 3);
 
-                pontuacao.LerparPontuacao();
+                pontuacao.LerparPontuacao(ataque * 10);
                 if(rand == 1 ) {
 
                     Instantiate(moedas, this.transform.position, this.transform.rotation);

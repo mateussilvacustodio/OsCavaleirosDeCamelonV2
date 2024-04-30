@@ -35,9 +35,9 @@ public class Pontuacao : MonoBehaviour
 
     }
 
-    public void LerparPontuacao() {
+    public void LerparPontuacao(float pontuacaoParaLerpar) {
 
-        StartCoroutine(LerparValor(100));
+        StartCoroutine(LerparValor(pontuacaoParaLerpar));
 
     }
 }

@@ -181,21 +181,21 @@ public class CharacterMoviment : MonoBehaviour
 
             
             characterAnim.SetBool("IsDamaged", true);
-            characterLife.vidaVerdadeira -= 10;
+            characterLife.vidaVerdadeira -= collider.gameObject.GetComponentInParent<Goblin>().ataque;
             StartCoroutine(SairKb());
             StartCoroutine(Piscar());
-            StartCoroutine(characterLife.LerparValor(10));
+            StartCoroutine(characterLife.LerparValor(collider.gameObject.GetComponentInParent<Goblin>().ataque));
 
         }
 
-        if(collider.gameObject.name == "Goblim" && isFlasing == false && collider.gameObject.GetComponent<Animator>().GetBool("IsDamaged") == false) {
+        if(collider.gameObject.tag == "Goblim" && isFlasing == false && collider.gameObject.GetComponent<Animator>().GetBool("IsDamaged") == false) {
 
             print("tomei dano");
             characterAnim.SetBool("IsDamaged", true);
-            characterLife.vidaVerdadeira -= 10;
+            characterLife.vidaVerdadeira -= collider.gameObject.GetComponent<Goblin>().ataque;
             StartCoroutine(SairKb());
             StartCoroutine(Piscar());
-            StartCoroutine(characterLife.LerparValor(10));
+            StartCoroutine(characterLife.LerparValor(collider.gameObject.GetComponent<Goblin>().ataque));
 
         }
 
