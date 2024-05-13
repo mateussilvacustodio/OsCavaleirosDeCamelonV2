@@ -107,7 +107,6 @@ public class Goblin : MonoBehaviour
             Physics2D.IgnoreCollision(goblimCollider, characterCollider, false);
 
         }
-
         
     }
 
@@ -164,7 +163,7 @@ public class Goblin : MonoBehaviour
 
             } else if(vida <= 0) {
                 
-                float rand = Random.Range(1, 3);
+                float rand = UnityEngine.Random.Range(1, 3);
 
                 pontuacao.LerparPontuacao(ataque * 10);
                 if(rand == 1 ) {
@@ -181,7 +180,6 @@ public class Goblin : MonoBehaviour
                 Destroy(this.gameObject);
 
             }
-            
 
         }
 

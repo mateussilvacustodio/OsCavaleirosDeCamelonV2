@@ -199,6 +199,32 @@ public class CharacterMoviment : MonoBehaviour
 
         }
 
+        /*
+        if(collider.gameObject.tag == "Flecha" && isFlasing == false) {
+
+            print("tomei dano");
+            characterAnim.SetBool("IsDamaged", true);
+            characterLife.vidaVerdadeira -= 10;
+            StartCoroutine(SairKb());
+            StartCoroutine(Piscar());
+            StartCoroutine(characterLife.LerparValor(10));
+            Destroy(collider.gameObject);
+
+        }
+
+        if(collider.gameObject.tag == "Elfo" && isFlasing == false && collider.gameObject.GetComponent<Animator>().GetBool("IsDamaged") == false) {
+
+            print("tomei dano");
+            characterAnim.SetBool("IsDamaged", true);
+            characterLife.vidaVerdadeira -= 10;
+            StartCoroutine(SairKb());
+            StartCoroutine(Piscar());
+            StartCoroutine(characterLife.LerparValor(10));
+
+        }
+        */
+        
+
         if(collider.gameObject.name == "Morte") {
 
             characterLife.vidaVerdadeira = 0;

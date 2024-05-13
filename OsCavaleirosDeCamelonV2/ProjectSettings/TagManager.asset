@@ -9,6 +9,8 @@ TagManager:
   - Moeda
   - Coracao
   - Goblim
+  - Elfo
+  - Flecha
   layers:
   - Default
   - TransparentFX
