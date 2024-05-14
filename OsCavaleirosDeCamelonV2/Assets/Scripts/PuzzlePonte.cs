@@ -29,5 +29,6 @@ public class PuzzlePonte : MonoBehaviour
 
         }
 
-    } 
+    }
+
 }

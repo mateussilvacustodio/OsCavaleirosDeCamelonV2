@@ -297,6 +297,7 @@ MonoBehaviour:
   QuantMoedas2: {fileID: 8640482594239604003}
   QuantMoedas: {fileID: 5102848306752298708}
   QuantMoedasRd: {fileID: 3731501324016071039}
+  dinheiro: {fileID: 0}
 --- !u!1 &8568653359137117071
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +372,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_Sprite: {fileID: -1188111029, guid: 56fda9ff4ca7ca44984458b13a21e0b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

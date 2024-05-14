@@ -152,7 +152,6 @@ public class CharacterMoviment : MonoBehaviour
 
             }
             
-            
         }
 
         if(collision.gameObject.tag == "Platform") {
@@ -199,7 +198,6 @@ public class CharacterMoviment : MonoBehaviour
 
         }
 
-        /*
         if(collider.gameObject.tag == "Flecha" && isFlasing == false) {
 
             print("tomei dano");
@@ -222,7 +220,6 @@ public class CharacterMoviment : MonoBehaviour
             StartCoroutine(characterLife.LerparValor(10));
 
         }
-        */
         
 
         if(collider.gameObject.name == "Morte") {
