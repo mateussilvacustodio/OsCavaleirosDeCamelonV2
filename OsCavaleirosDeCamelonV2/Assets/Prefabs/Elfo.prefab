@@ -250,7 +250,7 @@ MonoBehaviour:
   flecha: {fileID: 1403599314389471775, guid: e4a68ddefdaeed04d99c80fff80f308c, type: 3}
   elfoCollider: {fileID: 4135456274940336027}
   characterCollider: {fileID: 0}
-  KbX: 2.5
+  KbX: 2.6
   KbY: 2
   elfoRb: {fileID: 4963384962211050703}
   characterMoviment: {fileID: 0}
