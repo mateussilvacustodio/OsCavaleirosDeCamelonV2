@@ -8,6 +8,7 @@ public class ParedesFalsas : MonoBehaviour
     
     [SerializeField] Tilemap paredeRend;
     [SerializeField] float fadeVl;
+    [SerializeField] float fadeDestino;
     [SerializeField] bool isFadding;
 
     void Update()
@@ -15,7 +16,7 @@ public class ParedesFalsas : MonoBehaviour
         
         paredeRend.color = new Color(1f, 1f, 1f, fadeVl);
 
-        if(isFadding == true && fadeVl > 0.25f) {
+        if(isFadding == true && fadeVl > fadeDestino) {
 
             fadeVl -= Time.deltaTime * 2;
 
@@ -33,9 +34,9 @@ public class ParedesFalsas : MonoBehaviour
 
         }
 
-        if(fadeVl < 0.25) {
+        if(fadeVl < fadeDestino) {
 
-            fadeVl = 0.25f;
+            fadeVl = fadeDestino;
 
         }
 

@@ -11443,6 +11443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paredeRend: {fileID: 1581433968}
   fadeVl: 1
+  fadeDestino: 0.25
   isFadding: 0
 --- !u!483693784 &1581433967
 TilemapRenderer:

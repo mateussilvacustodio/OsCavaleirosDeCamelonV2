@@ -3528,6 +3528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paredeRend: {fileID: 272182327}
   fadeVl: 1
+  fadeDestino: 0.25
   isFadding: 0
 --- !u!60 &272182330
 PolygonCollider2D:

@@ -9,15 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 79781c1502b709b4480e16bdc978aedf
   - enabled: 1
-    path: Assets/Scenes/SelecaoFase.unity
-    guid: bd3c8536e59e92c47a62c94e40729b32
-  - enabled: 1
     path: Assets/Scenes/Cutscene1.unity
     guid: a28a93719528d0342bf4c4ea3b3d3109
   - enabled: 1
-    path: Assets/Scenes/Fase1.unity
-    guid: 21f216d6cfd19374b9902b255f2d0323
-  - enabled: 1
     path: Assets/Scenes/Fase2.unity
     guid: 96ddf3c5c95eb404792fa0007d49f845
+  - enabled: 1
+    path: Assets/Scenes/SelecaoFase.unity
+    guid: bd3c8536e59e92c47a62c94e40729b32
+  - enabled: 1
+    path: Assets/Scenes/Mapa.unity
+    guid: 415fd264d7122b341a3a019a083dfff1
+  - enabled: 1
+    path: Assets/Scenes/Fase5.unity
+    guid: 024920527eefce2419c22434b8c672a9
+  - enabled: 1
+    path: Assets/Scenes/Fase6.unity
+    guid: caca48fb7b619cb4d9ae50410d97f901
+  - enabled: 1
+    path: Assets/Scenes/Fase1.unity
+    guid: 21f216d6cfd19374b9902b255f2d0323
   m_configObjects: {}

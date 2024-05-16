@@ -19477,6 +19477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paredeRend: {fileID: 1626938964}
   fadeVl: 1
+  fadeDestino: 0.25
   isFadding: 0
 --- !u!61 &1626938966
 BoxCollider2D:
