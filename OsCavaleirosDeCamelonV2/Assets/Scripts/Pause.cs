@@ -10,10 +10,12 @@ public class Pause : MonoBehaviour
     
     [SerializeField] GameObject painel;
     bool isPaused;
+    [SerializeField] GameObject[] Character;
     [SerializeField] CharacterMoviment characterMoviment;
     
     void Start() {
 
+        characterMoviment = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<CharacterMoviment>();
         Time.timeScale = 1f;
 
     }

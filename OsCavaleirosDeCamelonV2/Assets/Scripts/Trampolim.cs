@@ -6,8 +6,15 @@ public class Trampolim : MonoBehaviour
 {
     [SerializeField] Animator trampolimAnim;
     [SerializeField] float forcaTrampolim;
+    [SerializeField] GameObject[] Character;
     public CharacterMoviment characterMoviment;
 
+    void Start() {
+
+        characterMoviment = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<CharacterMoviment>();
+
+    }
+    
     void OnTriggerEnter2D (Collider2D collider) {
 
         if(collider.gameObject.tag == "Player") {

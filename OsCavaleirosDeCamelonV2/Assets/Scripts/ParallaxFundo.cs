@@ -6,12 +6,13 @@ public class ParallaxFundo : MonoBehaviour
 {
     [SerializeField] Transform posicao;
     [SerializeField] float velocidade;
+    [SerializeField] GameObject[] Character;
     [SerializeField] CharacterMoviment characterMoviment;
     [SerializeField] Cutscene cutscene;
     // Start is called before the first frame update
     void Start()
     {
-        
+        characterMoviment = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<CharacterMoviment>();
     }
 
     // Update is called once per frame

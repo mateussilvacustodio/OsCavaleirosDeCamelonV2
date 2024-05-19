@@ -5,8 +5,16 @@ using UnityEngine;
 public class CameraMoviment : MonoBehaviour
 {
     
+    [SerializeField] GameObject[] Character;
     [SerializeField] Transform CharacterT;
     [SerializeField] float limiteX;
+    
+    void Start() {
+
+        CharacterT = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<Transform>();
+
+    }
+
     void Update()
     {
         

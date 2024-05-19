@@ -555,6 +555,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posicao: {fileID: 240866569}
   velocidade: 0.5
+  Character:
+  - {fileID: 755504893}
+  - {fileID: 755504893}
+  - {fileID: 755504893}
   characterMoviment: {fileID: 0}
   cutscene: {fileID: 755504898}
 --- !u!1 &546927608
@@ -1353,6 +1357,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posicao: {fileID: 1791588080}
   velocidade: 0.7
+  Character:
+  - {fileID: 755504893}
+  - {fileID: 755504893}
+  - {fileID: 755504893}
   characterMoviment: {fileID: 0}
   cutscene: {fileID: 755504898}
 --- !u!1 &1843820745
@@ -1615,6 +1623,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posicao: {fileID: 2077564955}
   velocidade: 0.6
+  Character:
+  - {fileID: 755504893}
+  - {fileID: 755504893}
+  - {fileID: 755504893}
   characterMoviment: {fileID: 0}
   cutscene: {fileID: 755504898}
 --- !u!1660057539 &9223372036854775807

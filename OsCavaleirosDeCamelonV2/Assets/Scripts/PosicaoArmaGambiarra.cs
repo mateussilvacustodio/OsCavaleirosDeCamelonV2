@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PosicaoArmaGambiarra : MonoBehaviour
 {
+    [SerializeField] GameObject[] Character;
     [SerializeField] Transform transformArma;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        transformArma = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<Transform>();
     }
 
     // Update is called once per frame
