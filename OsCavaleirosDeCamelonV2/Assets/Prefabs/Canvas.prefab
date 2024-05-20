@@ -1879,6 +1879,10 @@ MonoBehaviour:
   vidaImg: {fileID: 8990013483254813674}
   gameOver: {fileID: 6832704018910681141}
   pause: {fileID: 0}
+  Character:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   characterMoviment: {fileID: 0}
   playerCollider: {fileID: 0}
 --- !u!1 &6832704018910681141

@@ -23,10 +23,18 @@ public class Goblin : MonoBehaviour
     [SerializeField] LayerMask layer;
     [Header("Ataque")]
     [SerializeField] CircleCollider2D goblimArma;
+    [SerializeField] GameObject[] Character;
     [SerializeField] CharacterMoviment characterMoviment;
     [SerializeField] BoxCollider2D goblimCollider;
     [SerializeField] BoxCollider2D characterCollider;
     public float ataque;
+
+    void Start() {
+
+        characterMoviment = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<CharacterMoviment>();
+        characterCollider = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<BoxCollider2D>();
+
+    }
 
     void Update()
     {
@@ -198,4 +206,5 @@ public class Goblin : MonoBehaviour
         
 
     }
+
 }

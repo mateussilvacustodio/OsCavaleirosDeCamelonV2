@@ -177,7 +177,6 @@ public class CharacterMoviment : MonoBehaviour
                 KbX *= -1;
 
             }
-
             
             characterAnim.SetBool("IsDamaged", true);
             characterLife.vidaVerdadeira -= collider.gameObject.GetComponentInParent<Goblin>().ataque;
@@ -220,7 +219,6 @@ public class CharacterMoviment : MonoBehaviour
             StartCoroutine(characterLife.LerparValor(10));
 
         }
-        
 
         if(collider.gameObject.name == "Morte") {
 

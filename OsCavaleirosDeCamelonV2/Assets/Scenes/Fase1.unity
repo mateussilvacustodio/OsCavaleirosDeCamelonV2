@@ -155,9 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Character:
-  - {fileID: 1527169573422190387}
-  - {fileID: 301254150}
-  - {fileID: 1755919102}
+  - {fileID: 1527169573422190388}
+  - {fileID: 4384217026325637001}
+  - {fileID: 8402929733834979176}
   transformArma: {fileID: 0}
 --- !u!61 &22205060
 BoxCollider2D:
@@ -191,7 +191,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6393242, y: -0.2350456}
+  m_Offset: {x: 0.3783941, y: 0.04640353}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -202,7 +202,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.398284, y: 0.4170868}
+  m_Size: {x: 1.225447, y: 0.979985}
   m_EdgeRadius: 0
 --- !u!50 &22205061
 Rigidbody2D:
@@ -18408,6 +18408,18 @@ PrefabInstance:
       propertyPath: characterMoviment
       value: 
       objectReference: {fileID: 954506081}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[0]
+      value: 
+      objectReference: {fileID: 1527169573422190387}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[1]
+      value: 
+      objectReference: {fileID: 301254150}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[2]
+      value: 
+      objectReference: {fileID: 1755919102}
     - target: {fileID: 7541619545855789521, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.14
@@ -19529,6 +19541,18 @@ PrefabInstance:
       propertyPath: characterMoviment
       value: 
       objectReference: {fileID: 954506081}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[0]
+      value: 
+      objectReference: {fileID: 1527169573422190387}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[1]
+      value: 
+      objectReference: {fileID: 301254150}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[2]
+      value: 
+      objectReference: {fileID: 1755919102}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19602,6 +19626,18 @@ PrefabInstance:
       propertyPath: characterMoviment
       value: 
       objectReference: {fileID: 954506081}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[0]
+      value: 
+      objectReference: {fileID: 1527169573422190387}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[1]
+      value: 
+      objectReference: {fileID: 301254150}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[2]
+      value: 
+      objectReference: {fileID: 1755919102}
     - target: {fileID: 7541619545855789521, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.36
@@ -19679,6 +19715,18 @@ PrefabInstance:
       propertyPath: characterMoviment
       value: 
       objectReference: {fileID: 954506081}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[0]
+      value: 
+      objectReference: {fileID: 1527169573422190387}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[1]
+      value: 
+      objectReference: {fileID: 301254150}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[2]
+      value: 
+      objectReference: {fileID: 1755919102}
     - target: {fileID: 7541619545855789521, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.89
@@ -19813,6 +19861,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1595974083}
     - target: {fileID: 6231442256145409916, guid: 2d709b7c973b80f43b026551e11dd599, type: 3}
+      propertyPath: isFlasing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6231442256145409916, guid: 2d709b7c973b80f43b026551e11dd599, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6231442256145409916, guid: 2d709b7c973b80f43b026551e11dd599, type: 3}
       propertyPath: armaCollider
       value: 
       objectReference: {fileID: 22205060}
@@ -19828,6 +19884,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7944612743341446818, guid: 2d709b7c973b80f43b026551e11dd599, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19836,6 +19896,11 @@ PrefabInstance:
 --- !u!1 &1527169573422190387 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7678236812671550862, guid: 2d709b7c973b80f43b026551e11dd599, type: 3}
+  m_PrefabInstance: {fileID: 1527169573422190386}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1527169573422190388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4495394425277707135, guid: 2d709b7c973b80f43b026551e11dd599, type: 3}
   m_PrefabInstance: {fileID: 1527169573422190386}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3431453413973979699
@@ -19897,11 +19962,23 @@ PrefabInstance:
     - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
       propertyPath: characterCollider
       value: 
-      objectReference: {fileID: 954506077}
+      objectReference: {fileID: 0}
     - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
       propertyPath: characterMoviment
       value: 
-      objectReference: {fileID: 954506081}
+      objectReference: {fileID: 0}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[0]
+      value: 
+      objectReference: {fileID: 1527169573422190387}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[1]
+      value: 
+      objectReference: {fileID: 301254150}
+    - target: {fileID: 7429691035256793990, guid: efe95c876d9a6e74285157174cc47b86, type: 3}
+      propertyPath: Character.Array.data[2]
+      value: 
+      objectReference: {fileID: 1755919102}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20098,6 +20175,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1595974083}
     - target: {fileID: 5399181113412816181, guid: 56b0b92b4f89c1646b5a65e0c984fe16, type: 3}
+      propertyPath: isFlasing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5399181113412816181, guid: 56b0b92b4f89c1646b5a65e0c984fe16, type: 3}
       propertyPath: armaCollider
       value: 
       objectReference: {fileID: 22205060}
@@ -20122,6 +20203,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56b0b92b4f89c1646b5a65e0c984fe16, type: 3}
+--- !u!1 &4384217026325637001 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1892235299789461582, guid: 56b0b92b4f89c1646b5a65e0c984fe16, type: 3}
+  m_PrefabInstance: {fileID: 4384217026325637000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5265925183411112006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20145,11 +20231,23 @@ PrefabInstance:
     - target: {fileID: 3025755997289949943, guid: d03a97373bde8284a94a940c7174049d, type: 3}
       propertyPath: playerCollider
       value: 
-      objectReference: {fileID: 954506077}
+      objectReference: {fileID: 0}
     - target: {fileID: 3025755997289949943, guid: d03a97373bde8284a94a940c7174049d, type: 3}
       propertyPath: characterMoviment
       value: 
-      objectReference: {fileID: 954506081}
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025755997289949943, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+      propertyPath: Character.Array.data[0]
+      value: 
+      objectReference: {fileID: 1527169573422190387}
+    - target: {fileID: 3025755997289949943, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+      propertyPath: Character.Array.data[1]
+      value: 
+      objectReference: {fileID: 301254150}
+    - target: {fileID: 3025755997289949943, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+      propertyPath: Character.Array.data[2]
+      value: 
+      objectReference: {fileID: 1755919102}
     - target: {fileID: 3427427033514706422, guid: d03a97373bde8284a94a940c7174049d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -20406,6 +20504,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1595974083}
     - target: {fileID: 2590660229878829149, guid: 63507e36dbaa5854aafd7afcf9b18c8c, type: 3}
+      propertyPath: isFlasing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2590660229878829149, guid: 63507e36dbaa5854aafd7afcf9b18c8c, type: 3}
       propertyPath: armaCollider
       value: 
       objectReference: {fileID: 22205060}
@@ -20462,6 +20564,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63507e36dbaa5854aafd7afcf9b18c8c, type: 3}
+--- !u!1 &8402929733834979176 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4675991102560174500, guid: 63507e36dbaa5854aafd7afcf9b18c8c, type: 3}
+  m_PrefabInstance: {fileID: 8402929733834979175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

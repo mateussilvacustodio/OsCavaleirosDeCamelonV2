@@ -17,11 +17,14 @@ public class CharacterLife : MonoBehaviour
     [SerializeField] Image vidaImg;
     [SerializeField] GameObject gameOver;
     [SerializeField] Pause pause;
+    [SerializeField] GameObject[] Character;
     [SerializeField] CharacterMoviment characterMoviment;
     [SerializeField] BoxCollider2D playerCollider;
      
     void Start()
     {
+        characterMoviment = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<CharacterMoviment>();
+        playerCollider = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<BoxCollider2D>();
         vida = vidaMax;
         vidaVerdadeira = vidaMax;
     }

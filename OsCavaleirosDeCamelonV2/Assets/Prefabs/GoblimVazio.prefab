@@ -366,6 +366,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   goblimArma: {fileID: 6643205997789085757}
+  Character:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   characterMoviment: {fileID: 0}
   goblimCollider: {fileID: 4817889806316009518}
   characterCollider: {fileID: 0}

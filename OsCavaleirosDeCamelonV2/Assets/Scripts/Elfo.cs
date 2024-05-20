@@ -16,6 +16,7 @@ public class Elfo : MonoBehaviour
     [SerializeField] float timer;
     [SerializeField] GameObject flecha;
     [SerializeField] BoxCollider2D elfoCollider;
+    [SerializeField] GameObject[] Character;
     [SerializeField] BoxCollider2D characterCollider;
     [Header("Dano")]
     [SerializeField] float KbX;
@@ -28,6 +29,13 @@ public class Elfo : MonoBehaviour
     [SerializeField] GameObject moedas;
     [SerializeField] GameObject coracao;
 
+    void Start() {
+
+        characterCollider = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<BoxCollider2D>();
+        characterMoviment = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<CharacterMoviment>();
+
+    }
+    
     void Update()
     {
         
