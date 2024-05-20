@@ -120,7 +120,8 @@ public class CharacterMoviment : MonoBehaviour
             characterLife.vidaVerdadeira += 10;
             Destroy(collision.gameObject);
 
-        }  
+        }
+
 
     }
 
@@ -227,7 +228,18 @@ public class CharacterMoviment : MonoBehaviour
             characterRb.velocity = new Vector2(0,characterRb.velocity.y);
             this.enabled = false;            
 
-        }        
+        }
+
+        if(collider.gameObject.tag == "Boss" && isFlasing == false) {
+
+            print("tomei dano");
+            characterAnim.SetBool("IsDamaged", true);
+            characterLife.vidaVerdadeira -= 20;
+            StartCoroutine(SairKb());
+            StartCoroutine(Piscar());
+            StartCoroutine(characterLife.LerparValor(20));
+
+        } 
 
     }
 

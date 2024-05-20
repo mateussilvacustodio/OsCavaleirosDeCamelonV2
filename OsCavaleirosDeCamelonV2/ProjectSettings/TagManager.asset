@@ -12,6 +12,7 @@ TagManager:
   - Elfo
   - Flecha
   - Arma
+  - Boss
   layers:
   - Default
   - TransparentFX
