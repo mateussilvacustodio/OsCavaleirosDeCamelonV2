@@ -11,6 +11,10 @@ public class BossPedra : MonoBehaviour
     [SerializeField] GameObject[] Character;
     [SerializeField] CharacterMoviment characterMoviment;
     [SerializeField] BoxCollider2D characterCollider;
+    [SerializeField] float posIni;
+    [SerializeField] BoxCollider2D[] plataformaCollider;
+    //[SerializeField] LayerMask pedraLayer;
+    //[SerializeField] LayerMask plataformaLayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +33,7 @@ public class BossPedra : MonoBehaviour
 
         } else {
 
-            transform.position = new Vector3(14.33f, -0.82f, 0);
+            transform.position = new Vector3(posIni, -0.82f, 0);
 
         }
 
@@ -44,6 +48,14 @@ public class BossPedra : MonoBehaviour
             Physics2D.IgnoreCollision(pedraCollider, characterCollider, false);
 
         }
+
+        //ignorar a colisao com as plataformas
+
+        Physics2D.IgnoreCollision(pedraCollider, plataformaCollider[0]);
+        Physics2D.IgnoreCollision(pedraCollider, plataformaCollider[1]);
+        Physics2D.IgnoreCollision(pedraCollider, plataformaCollider[2]);
+        Physics2D.IgnoreCollision(pedraCollider, plataformaCollider[3]);
+        Physics2D.IgnoreCollision(pedraCollider, plataformaCollider[4]);
     }
 
     void OnTriggerEnter2D(Collider2D collider) {
@@ -51,6 +63,7 @@ public class BossPedra : MonoBehaviour
         if(collider.gameObject.name == "PararPedra") {
 
             mover = false;
+            PlataformaBoss.subir = false;
 
         }
 

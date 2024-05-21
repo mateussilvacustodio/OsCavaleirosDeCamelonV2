@@ -12,25 +12,33 @@ public class Boss : MonoBehaviour
     [SerializeField] Animator bossAnim;
     [SerializeField] SpriteRenderer bossSp;
     [SerializeField] Image bossVida;
+    [SerializeField] BoxCollider2D bossCollider;
     
     [Header("Partes")]
     [SerializeField] GameObject pedra;
-    [SerializeField] GameObject mao;
+    [SerializeField] GameObject[] Character;
+    [SerializeField] BoxCollider2D characterCollider;
     [Header("Vida")]
     [SerializeField] float vida;
     [SerializeField] float vidaMax;
     [Header("Etapas")]
     [SerializeField] float etapa;
     [SerializeField] float quantidadeSocos;
+    [SerializeField] GameObject raio;
+    [SerializeField] GameObject raio2;
+    [SerializeField] float ultimaEtapa;
+    [Header("Temporizador")]
+    [SerializeField] float tempo;
+    [SerializeField] float tempoMax; 
     [Header("Restante")]
-    [SerializeField] bool isOnGround;
+    public bool isOnGround;
     [SerializeField] CinemachineImpulseSource impulseSource;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        characterCollider = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -62,7 +70,7 @@ public class Boss : MonoBehaviour
 
         }
 
-        if(Input.GetKeyDown(KeyCode.Space)) {
+        if(Input.GetKeyDown(KeyCode.P)) {
 
             mudarEtapa();
 
@@ -86,7 +94,18 @@ public class Boss : MonoBehaviour
 
         bossVida.fillAmount = vida / vidaMax;
 
-        
+        //ignorar colisao com player
+
+        Physics2D.IgnoreCollision(bossCollider, characterCollider, true);
+
+        tempo += Time.deltaTime;
+
+        if(tempo > tempoMax) {
+
+            mudarEtapa();
+            tempo = 0;
+
+        }
 
     }
 
@@ -96,6 +115,11 @@ public class Boss : MonoBehaviour
 
             isOnGround = true;
             impulseSource.GenerateImpulseWithForce(1f);
+            BossMao.poderCair = true;
+            BossMao.cair = 0;
+            BarraVermelha.descer = 0;
+            tempo = 0;
+            tempoMax = 3;
 
         }
 
@@ -113,7 +137,7 @@ public class Boss : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider) {
 
-        if(collider.gameObject.name == "Arma") {
+        if(collider.gameObject.name == "Arma" && bossAnim.GetBool("Pulo") == false && bossAnim.GetBool("Queda") == false && bossAnim.GetBool("Abaixado") == false) {
 
             StartCoroutine(Piscar());
             StartCoroutine(LerparValor(5));
@@ -123,7 +147,13 @@ public class Boss : MonoBehaviour
 
     void mudarEtapa() {
 
-        etapa = 2;
+        do {
+        
+            etapa = UnityEngine.Random.Range(1, 4);
+
+        } while (etapa == ultimaEtapa);
+
+        ultimaEtapa = etapa;
 
     }
 
@@ -135,38 +165,55 @@ public class Boss : MonoBehaviour
 
     IEnumerator Parar() {
 
-        yield return new WaitForSeconds(2f);
+        tempoMax = 12;
+        PlataformaBoss.subir = true;
+        yield return new WaitForSeconds(2.5f);
         bossRb.velocity = new Vector2(0,0);
         pedra.GetComponent<BossPedra>().mover = true;
-        yield return new WaitForSeconds(2f);              
+        yield return new WaitForSeconds(3f);        
         etapa = 0;
     }
 
     IEnumerator Mao() {
 
+        tempoMax = 8;
+        BarraVermelha.descer = 1;
         yield return new WaitForSeconds(2f);
         bossRb.velocity = new Vector2(0,0);
-        mao.GetComponent<BossMao>().cair = true;
-        yield return new WaitForSeconds(2f);              
+        if(BossMao.poderCair) {
+
+            BossMao.cair = 1;
+            BossMao.poderCair = false;
+            BarraVermelha.descer = 2;
+
+        }
+        
+        
+        yield return new WaitForSeconds(0.5f);              
         etapa = 0;              
     
     }
 
     IEnumerator Abaixado() {
         
+        tempoMax = 8;
         yield return new WaitForSeconds(0.25f);
         bossAnim.SetBool("Bater", true);
         yield return new WaitForSeconds(0.5f);
         bossAnim.SetBool("Esq", true);
+        Instantiate(raio);
         impulseSource.GenerateImpulseWithForce(1f);
         yield return new WaitForSeconds(0.5f);
         bossAnim.SetBool("Esq", false);
+        Instantiate(raio2);
         impulseSource.GenerateImpulseWithForce(1f);
         yield return new WaitForSeconds(0.5f);
         bossAnim.SetBool("Esq", true);
+        Instantiate(raio);
         impulseSource.GenerateImpulseWithForce(1f);
         yield return new WaitForSeconds(0.5f);
         bossAnim.SetBool("Bater", false);
+        Instantiate(raio2);
         impulseSource.GenerateImpulseWithForce(1f);
         quantidadeSocos ++;
 

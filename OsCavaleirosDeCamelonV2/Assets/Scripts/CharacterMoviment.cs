@@ -99,7 +99,7 @@ public class CharacterMoviment : MonoBehaviour
 
     void OnCollisionEnter2D (Collision2D collision) {
 
-        if(collision.gameObject.CompareTag("Ground") || collision.gameObject.tag == "Platform" ) {
+        if(collision.gameObject.CompareTag("Ground") || collision.gameObject.tag == "Platform" && transform.position.y > collision.gameObject.transform.position.y) {
 
             characterAnim.SetBool("IsDowning", false);
             //print("Toquei no chao");
@@ -155,7 +155,7 @@ public class CharacterMoviment : MonoBehaviour
             
         }
 
-        if(collision.gameObject.tag == "Platform") {
+        if(collision.gameObject.tag == "Platform" && transform.position.y > collision.gameObject.transform.position.y) {
 
             isOnGround = false;
             gameObject.transform.parent = null;
@@ -189,7 +189,6 @@ public class CharacterMoviment : MonoBehaviour
 
         if(collider.gameObject.tag == "Goblim" && isFlasing == false && collider.gameObject.GetComponent<Animator>().GetBool("IsDamaged") == false) {
 
-            print("tomei dano");
             characterAnim.SetBool("IsDamaged", true);
             characterLife.vidaVerdadeira -= collider.gameObject.GetComponent<Goblin>().ataque;
             StartCoroutine(SairKb());
@@ -200,7 +199,6 @@ public class CharacterMoviment : MonoBehaviour
 
         if(collider.gameObject.tag == "Flecha" && isFlasing == false) {
 
-            print("tomei dano");
             characterAnim.SetBool("IsDamaged", true);
             characterLife.vidaVerdadeira -= 10;
             StartCoroutine(SairKb());
@@ -212,7 +210,6 @@ public class CharacterMoviment : MonoBehaviour
 
         if(collider.gameObject.tag == "Elfo" && isFlasing == false && collider.gameObject.GetComponent<Animator>().GetBool("IsDamaged") == false) {
 
-            print("tomei dano");
             characterAnim.SetBool("IsDamaged", true);
             characterLife.vidaVerdadeira -= 10;
             StartCoroutine(SairKb());
@@ -232,14 +229,23 @@ public class CharacterMoviment : MonoBehaviour
 
         if(collider.gameObject.tag == "Boss" && isFlasing == false) {
 
-            print("tomei dano");
             characterAnim.SetBool("IsDamaged", true);
             characterLife.vidaVerdadeira -= 20;
             StartCoroutine(SairKb());
             StartCoroutine(Piscar());
             StartCoroutine(characterLife.LerparValor(20));
 
-        } 
+        }
+
+        if(collider.gameObject.name == "Boss" && isFlasing == false  && collider.gameObject.GetComponent<Animator>().GetBool("Queda") == true) {
+
+            characterAnim.SetBool("IsDamaged", true);
+            characterLife.vidaVerdadeira -= 20;
+            StartCoroutine(SairKb());
+            StartCoroutine(Piscar());
+            StartCoroutine(characterLife.LerparValor(20));
+
+        }
 
     }
 
