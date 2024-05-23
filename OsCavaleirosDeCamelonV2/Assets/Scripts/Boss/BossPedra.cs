@@ -33,6 +33,7 @@ public class BossPedra : MonoBehaviour
 
         } else {
 
+            pedraRb.velocity = new Vector2(0,0);
             transform.position = new Vector3(posIni, -0.82f, 0);
 
         }

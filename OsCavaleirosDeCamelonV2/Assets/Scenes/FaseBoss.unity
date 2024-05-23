@@ -544,7 +544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4878927342755780463, guid: 287f6a8ef0d5e414facc39291706209f, type: 3}
       propertyPath: m_Name
-      value: PlataformaVoadoraCaverna (3)
+      value: PlataformaBoss
       objectReference: {fileID: 0}
     - target: {fileID: 4878927342755780463, guid: 287f6a8ef0d5e414facc39291706209f, type: 3}
       propertyPath: m_Layer
@@ -7022,7 +7022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4878927342755780463, guid: 287f6a8ef0d5e414facc39291706209f, type: 3}
       propertyPath: m_Name
-      value: PlataformaVoadoraCaverna (1)
+      value: PlataformaBoss
       objectReference: {fileID: 0}
     - target: {fileID: 4878927342755780463, guid: 287f6a8ef0d5e414facc39291706209f, type: 3}
       propertyPath: m_Layer
@@ -7368,7 +7368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4878927342755780463, guid: 287f6a8ef0d5e414facc39291706209f, type: 3}
       propertyPath: m_Name
-      value: PlataformaVoadoraCaverna
+      value: PlataformaBoss
       objectReference: {fileID: 0}
     - target: {fileID: 4878927342755780463, guid: 287f6a8ef0d5e414facc39291706209f, type: 3}
       propertyPath: m_Layer
@@ -7903,7 +7903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4878927342755780463, guid: 287f6a8ef0d5e414facc39291706209f, type: 3}
       propertyPath: m_Name
-      value: PlataformaVoadoraCaverna (4)
+      value: PlataformaBoss
       objectReference: {fileID: 0}
     - target: {fileID: 4878927342755780463, guid: 287f6a8ef0d5e414facc39291706209f, type: 3}
       propertyPath: m_Layer
@@ -8066,7 +8066,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4878927342755780463, guid: 287f6a8ef0d5e414facc39291706209f, type: 3}
       propertyPath: m_Name
-      value: PlataformaVoadoraCaverna (2)
+      value: PlataformaBoss
       objectReference: {fileID: 0}
     - target: {fileID: 4878927342755780463, guid: 287f6a8ef0d5e414facc39291706209f, type: 3}
       propertyPath: m_Layer
@@ -8498,7 +8498,7 @@ Transform:
   m_GameObject: {fileID: 1421549518}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.274, y: 1.5667, z: 0}
+  m_LocalPosition: {x: 31.274, y: -0.82, z: 0}
   m_LocalScale: {x: 0.45732874, y: 0.45732874, z: 0.45732874}
   m_ConstrainProportionsScale: 0
   m_Children: []

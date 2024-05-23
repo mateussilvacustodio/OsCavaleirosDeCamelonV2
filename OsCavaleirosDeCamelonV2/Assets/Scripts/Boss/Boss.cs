@@ -39,6 +39,7 @@ public class Boss : MonoBehaviour
     void Start()
     {
         characterCollider = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<BoxCollider2D>();
+        tempo = 0;
     }
 
     // Update is called once per frame

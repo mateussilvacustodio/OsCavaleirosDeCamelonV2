@@ -26,6 +26,8 @@ public class BossMao : MonoBehaviour
     {
         characterMoviment = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<CharacterMoviment>();
         characterCollider = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<BoxCollider2D>();
+        cair = 0;
+        poderCair = false;
     }
 
     // Update is called once per frame

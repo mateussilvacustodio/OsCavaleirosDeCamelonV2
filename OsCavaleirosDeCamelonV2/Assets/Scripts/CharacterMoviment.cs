@@ -127,17 +127,19 @@ public class CharacterMoviment : MonoBehaviour
 
     void OnCollisionStay2D (Collision2D collision) {
 
-        if(collision.gameObject.tag == "Platform" && characterRb.velocity.x ==0) {
+        if(collision.gameObject.tag == "Platform" && characterRb.velocity.x ==0 && collision.gameObject.name != "PlataformaBoss") {
 
             gameObject.transform.parent= collision.transform;
             //print("Estou colidindo na plaforma e minha velocidade atual é 0");
         }
 
-        if(collision.gameObject.tag == "Platform" && characterRb.velocity.x !=0) {
+        if(collision.gameObject.tag == "Platform" && characterRb.velocity.x !=0 && collision.gameObject.name != "PlataformaBoss") {
 
             gameObject.transform.parent= null;
             //print("Estou colidindo na plaforma e minha velocidade atual é diferente de 0");
         }
+
+
 
     }
 

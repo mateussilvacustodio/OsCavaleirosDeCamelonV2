@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Fase2.unity
     guid: 96ddf3c5c95eb404792fa0007d49f845
   - enabled: 1
-    path: Assets/Scenes/Mapa.unity
-    guid: 415fd264d7122b341a3a019a083dfff1
+    path: Assets/Scenes/Loja.unity
+    guid: 6aa9b42e517338740be397eca9948d7e
   - enabled: 1
-    path: Assets/Scenes/SelecaoPersonagem.unity
-    guid: 3d7f8997f183e76409b56c797d20910c
+    path: Assets/Scenes/Fase3.unity
+    guid: c4f8ec2a5e0af7a49a22e7cdf4bceb4e
   - enabled: 1
     path: Assets/Scenes/Fase5.unity
     guid: 024920527eefce2419c22434b8c672a9
@@ -27,6 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Fase6.unity
     guid: caca48fb7b619cb4d9ae50410d97f901
   - enabled: 1
+    path: Assets/Scenes/FaseBoss.unity
+    guid: bdd36766491d2c245bc72cf8fbbd5330
+  - enabled: 1
     path: Assets/Scenes/Fase1.unity
     guid: 21f216d6cfd19374b9902b255f2d0323
+  - enabled: 1
+    path: Assets/Scenes/SelecaoPersonagem.unity
+    guid: 3d7f8997f183e76409b56c797d20910c
+  - enabled: 1
+    path: Assets/Scenes/Mapa.unity
+    guid: 415fd264d7122b341a3a019a083dfff1
   m_configObjects: {}
