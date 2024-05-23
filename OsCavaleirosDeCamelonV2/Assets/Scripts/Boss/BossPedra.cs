@@ -13,16 +13,13 @@ public class BossPedra : MonoBehaviour
     [SerializeField] BoxCollider2D characterCollider;
     [SerializeField] float posIni;
     [SerializeField] BoxCollider2D[] plataformaCollider;
-    //[SerializeField] LayerMask pedraLayer;
-    //[SerializeField] LayerMask plataformaLayer;
-    // Start is called before the first frame update
+    [SerializeField] BoxCollider2D[] bloqueadorCollider;
     void Start()
     {
         characterMoviment = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<CharacterMoviment>();
         characterCollider = Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Rotate(new Vector3(0, 0, 200) * Time.deltaTime);
@@ -51,12 +48,16 @@ public class BossPedra : MonoBehaviour
         }
 
         //ignorar a colisao com as plataformas
-
         Physics2D.IgnoreCollision(pedraCollider, plataformaCollider[0]);
         Physics2D.IgnoreCollision(pedraCollider, plataformaCollider[1]);
         Physics2D.IgnoreCollision(pedraCollider, plataformaCollider[2]);
         Physics2D.IgnoreCollision(pedraCollider, plataformaCollider[3]);
         Physics2D.IgnoreCollision(pedraCollider, plataformaCollider[4]);
+
+        
+        //ignorar a colisao com os bloqueadores
+        Physics2D.IgnoreCollision(pedraCollider, bloqueadorCollider[0]);
+        Physics2D.IgnoreCollision(pedraCollider, bloqueadorCollider[1]);
     }
 
     void OnTriggerEnter2D(Collider2D collider) {

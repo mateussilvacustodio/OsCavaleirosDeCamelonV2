@@ -77,6 +77,13 @@ public class Espada : MonoBehaviour
 
         }
 
+        //voltar
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+
+            SceneManager.LoadScene("SelecaoPersonagem");
+
+        }
+
 
     }
 

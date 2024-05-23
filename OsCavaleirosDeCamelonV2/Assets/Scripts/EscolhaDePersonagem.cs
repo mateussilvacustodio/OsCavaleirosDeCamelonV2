@@ -15,7 +15,12 @@ public class EscolhaDePersonagem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //voltar
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+
+            SceneManager.LoadScene("Menu");
+
+        }
     }
 
     public void personagemEscolhido(int parametropersonagem) {

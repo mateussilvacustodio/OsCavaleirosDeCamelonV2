@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting.ReorderableList.Element_Adder_Menu;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterMoviment : MonoBehaviour
 {    
     [Header("Movimento")]
-    [SerializeField] float velocidadeMov;
+    public float velocidadeMov;
     public float velocidadePulo;
     public Rigidbody2D characterRb;
     public Animator characterAnim;
@@ -23,7 +24,13 @@ public class CharacterMoviment : MonoBehaviour
     [Header("Vida")]
     [SerializeField] CharacterLife characterLife;
     [Header("Moedas")]
-    [SerializeField] Dinheiro dinheiro;
+    [SerializeField] Dinheiro dinheiro; 
+
+    void Start() {
+
+        
+
+    }
 
     void Update()
     {
@@ -139,8 +146,6 @@ public class CharacterMoviment : MonoBehaviour
             //print("Estou colidindo na plaforma e minha velocidade atual é diferente de 0");
         }
 
-
-
     }
 
     void OnCollisionExit2D (Collision2D collision) {
@@ -246,6 +251,20 @@ public class CharacterMoviment : MonoBehaviour
             StartCoroutine(SairKb());
             StartCoroutine(Piscar());
             StartCoroutine(characterLife.LerparValor(20));
+
+        }
+
+        if(collider.gameObject.tag == "Ponte") {
+
+            AtivarPersonagem.cutscene = true;
+            Barras.Cutscene_barra = true;
+            PlayerPrefs.SetFloat("DinheiroTotal", dinheiro.dinheiro);
+
+        }
+
+        if(collider.gameObject.name == "Passar") {
+
+            SceneManager.LoadScene("Mapa");
 
         }
 

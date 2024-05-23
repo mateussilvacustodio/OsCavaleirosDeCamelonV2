@@ -13,6 +13,7 @@ TagManager:
   - Flecha
   - Arma
   - Boss
+  - Ponte
   layers:
   - Default
   - TransparentFX

@@ -21,6 +21,7 @@ public class Boss : MonoBehaviour
     [Header("Vida")]
     [SerializeField] float vida;
     [SerializeField] float vidaMax;
+    [SerializeField] bool isAlive;
     [Header("Etapas")]
     [SerializeField] float etapa;
     [SerializeField] float quantidadeSocos;
@@ -46,53 +47,67 @@ public class Boss : MonoBehaviour
     void Update()
     {
         
-        if(etapa == 1) {
+        if(isAlive) {
 
-            bossAnim.SetBool("Abaixado", true);
-            StartCoroutine(Abaixado());
-            etapa = 0;
-                      
+            if(etapa == 1) {
 
-        }
+                bossAnim.SetBool("Abaixado", true);
+                StartCoroutine(Abaixado());
+                etapa = 0;      
 
-        if(etapa == 2) {
+            }
 
-            bossAnim.SetBool("Pulo", true);
-            Invoke("pular", 0.5f);
-            StartCoroutine(Parar());
+            if(etapa == 2) {
 
-        }
+                bossAnim.SetBool("Pulo", true);
+                Invoke("pular", 0.5f);
+                StartCoroutine(Parar());
 
-        if(etapa == 3) {
+            }
 
-            bossAnim.SetBool("Pulo", true);
-            Invoke("pular", 0.5f);
-            StartCoroutine(Mao());
+            if(etapa == 3) {
 
-        }
+                bossAnim.SetBool("Pulo", true);
+                Invoke("pular", 0.5f);
+                StartCoroutine(Mao());
 
-        if(Input.GetKeyDown(KeyCode.P)) {
+            }
+
+
+            if(bossRb.velocity.y > 0) {
+
+                bossAnim.SetBool("Pulo", false);
+
+            } else if(bossRb.velocity.y < 0) {
+
+                bossAnim.SetBool("Queda", true);
+
+            }
+
+            if(isOnGround) {
+
+                bossAnim.SetBool("Queda", false);
+
+            }
+
+            if(tempo > tempoMax) {
 
             mudarEtapa();
+            tempo = 0;
 
-        }
+            }
 
-        if(bossRb.velocity.y > 0) {
+        } else if (!isAlive) {
 
-            bossAnim.SetBool("Pulo", false);
-
-        } else if(bossRb.velocity.y < 0) {
-
+            bossCollider.enabled = false;
             bossAnim.SetBool("Queda", true);
+            bossRb.gravityScale = 0.5f;
+            bossSp.sortingOrder = -2;
+            Character[PlayerPrefs.GetInt("PersonagemEscolhido")].GetComponent<CharacterMoviment>().enabled = false;
+            Barras.Cutscene_barra = true;
 
         }
-
-        if(isOnGround) {
-
-            bossAnim.SetBool("Queda", false);
-
-        }
-
+        
         bossVida.fillAmount = vida / vidaMax;
 
         //ignorar colisao com player
@@ -101,12 +116,11 @@ public class Boss : MonoBehaviour
 
         tempo += Time.deltaTime;
 
-        if(tempo > tempoMax) {
+        if(vida <= 0) {
 
-            mudarEtapa();
-            tempo = 0;
+            isAlive = false;
 
-        }
+        } 
 
     }
 
@@ -138,10 +152,16 @@ public class Boss : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider) {
 
-        if(collider.gameObject.name == "Arma" && bossAnim.GetBool("Pulo") == false && bossAnim.GetBool("Queda") == false && bossAnim.GetBool("Abaixado") == false) {
+        if(collider.gameObject.name == "Arma" && isOnGround == true && bossAnim.GetBool("Pulo") == false && bossAnim.GetBool("Queda") == false && bossAnim.GetBool("Abaixado") == false) {
 
             StartCoroutine(Piscar());
             StartCoroutine(LerparValor(5));
+        }
+
+        if(collider.gameObject.name == "PassarBoss") {
+
+            AtivarPersonagem.cutscene = true;
+
         }
 
     }
@@ -251,7 +271,6 @@ public class Boss : MonoBehaviour
 
             tempo += Time.deltaTime;
             vida = Mathf.Lerp(vida, dano, tempo / 1);
-            print(dano);
 
             yield return null;
 
