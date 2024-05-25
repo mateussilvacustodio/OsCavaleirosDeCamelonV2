@@ -32,12 +32,6 @@ public class CharacterMoviment : MonoBehaviour
     [Header("Moedas")]
     [SerializeField] Dinheiro dinheiro; 
 
-    void Start() {
-
-        
-
-    }
-
     void Update()
     {
         //mover
@@ -140,7 +134,7 @@ public class CharacterMoviment : MonoBehaviour
         if(characterRb.velocity.y > 0 && !isOnGround) {
 
             characterAnim.SetBool("IsJumping", true);
-            print("IsUpping");
+            //print("IsUpping");
 
         }
         
@@ -155,14 +149,6 @@ public class CharacterMoviment : MonoBehaviour
     }
 
     void OnCollisionEnter2D (Collision2D collision) {
-
-        if(collision.gameObject.CompareTag("Ground") || collision.gameObject.tag == "Platform" && transform.position.y > collision.gameObject.transform.position.y) {
-
-            characterAnim.SetBool("IsDowning", false);
-            //print("Toquei no chao");
-            isOnGround = true;
-
-        }
 
         if(collision.gameObject.tag == "Moeda") {
 
@@ -181,15 +167,15 @@ public class CharacterMoviment : MonoBehaviour
 
     }
 
-    void OnCollisionStay2D (Collision2D collision) {
+    void OnTriggerStay2D (Collider2D collider) {
 
-        if(collision.gameObject.tag == "Platform" && characterRb.velocity.x ==0 && collision.gameObject.name != "PlataformaBoss") {
+        if(collider.gameObject.tag == "Platform" && characterRb.velocity.x ==0 && collider.gameObject.name != "PlataformaBoss") {
 
-            gameObject.transform.parent= collision.transform;
+            gameObject.transform.parent= collider.transform;
             //print("Estou colidindo na plaforma e minha velocidade atual é 0");
         }
 
-        if(collision.gameObject.tag == "Platform" && characterRb.velocity.x !=0 && collision.gameObject.name != "PlataformaBoss") {
+        if(collider.gameObject.tag == "Platform" && characterRb.velocity.x !=0 && collider.gameObject.name != "PlataformaBoss") {
 
             gameObject.transform.parent= null;
             //print("Estou colidindo na plaforma e minha velocidade atual é diferente de 0");
@@ -197,32 +183,16 @@ public class CharacterMoviment : MonoBehaviour
 
     }
 
-    void OnCollisionExit2D (Collision2D collision) {
-
-        if(collision.gameObject.tag == "Ground") {
-
-            isOnGround = false;
-
-            if(characterRb.velocity.y < 0) {
-
-                characterAnim.SetBool("IsDowning", true);
-
-            }
-            
-        }
-
-        if(collision.gameObject.tag == "Platform" && transform.position.y > collision.gameObject.transform.position.y) {
-
-            isOnGround = false;
-            gameObject.transform.parent = null;
-            //print("Saí da plataforma");
-
-        }
-
-    }
-
     void OnTriggerEnter2D (Collider2D collider) {
 
+        if(collider.gameObject.CompareTag("Ground") || collider.gameObject.tag == "Platform") {
+
+            characterAnim.SetBool("IsDowning", false);
+            //print("Toquei no chao");
+            isOnGround = true;
+
+        }
+        
         if(collider.gameObject.name == "ArmaGoblim") {
 
             if(collider.transform.position.x < transform.position.x && KbX < 0) {
@@ -319,6 +289,30 @@ public class CharacterMoviment : MonoBehaviour
 
     }
 
+    void OnTriggerExit2D (Collider2D collider) {
+
+        if(collider.gameObject.tag == "Ground") {
+
+            isOnGround = false;
+            print("Saí do chao");
+
+            if(characterRb.velocity.y < 0) {
+
+                characterAnim.SetBool("IsDowning", true);
+
+            }
+            
+        }
+
+        if(collider.gameObject.tag == "Platform") {
+
+            isOnGround = false;
+            gameObject.transform.parent = null;
+
+        }
+
+    }
+
     IEnumerator SairKb() {
 
         yield return new WaitForSeconds(tempoKb);
@@ -366,6 +360,5 @@ public class CharacterMoviment : MonoBehaviour
         Instantiate(poder, posicaoSpecial.position, transform.rotation);
 
     }
-
 
 }

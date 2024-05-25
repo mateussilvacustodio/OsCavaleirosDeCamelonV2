@@ -23,8 +23,7 @@ public class ParallaxMenu : MonoBehaviour
         
         nuvemSP.size = new Vector2(tamanhoInicial, nuvemSP.size.y);
 
-        tamanhoInicial += Time.deltaTime * velocidade;
-        print(Time.deltaTime);    
+        tamanhoInicial += Time.deltaTime * velocidade;    
 
         if(tamanhoInicial >= limite) {
 

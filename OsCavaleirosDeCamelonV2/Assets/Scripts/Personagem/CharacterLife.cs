@@ -82,6 +82,16 @@ public class CharacterLife : MonoBehaviour
         float tempo = 0;
         float dano = vida - danoDado;
 
+        if(dano > vidaMax) {
+
+            dano = vidaMax;
+
+        } else if(dano < 0) {
+
+            dano = 0;
+
+        }
+
         while (tempo < duracaoLerp) {
 
             tempo += Time.deltaTime;

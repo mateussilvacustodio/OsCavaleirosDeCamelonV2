@@ -1189,7 +1189,7 @@ GameObject:
   - component: {fileID: 788061210}
   - component: {fileID: 788061209}
   - component: {fileID: 788061208}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Castelo (3)
   m_TagString: Ground
   m_Icon: {fileID: 0}
