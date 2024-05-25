@@ -12,13 +12,29 @@ public class Dinheiro : MonoBehaviour
     public bool isLerping;
     public float quantidadePocoes;
     public float aumentaVida;
+    [Header("Especiais")]
+    public int[] arraySpecial;
     
-    void Start() {
+    void Awake() {
 
         dinheiro = PlayerPrefs.GetFloat("DinheiroTotal");
         quantidadePocoes = PlayerPrefs.GetFloat("PocaoTotal");
         aumentaVida = PlayerPrefs.GetFloat("AumentoVida");
-        //dinheiro = 100;
+        arraySpecial[0] = PlayerPrefs.GetInt("Especial0");
+        arraySpecial[1] = PlayerPrefs.GetInt("Especial1");
+        arraySpecial[2] = PlayerPrefs.GetInt("Especial2");
+        // dinheiro = 0;
+        // quantidadePocoes = 0;
+        // aumentaVida = 0;
+        // arraySpecial[0] = 0;
+        // arraySpecial[1] = 0;
+        // arraySpecial[2] = 0;
+
+    }
+    
+    void Start() {
+
+        
 
     }
 

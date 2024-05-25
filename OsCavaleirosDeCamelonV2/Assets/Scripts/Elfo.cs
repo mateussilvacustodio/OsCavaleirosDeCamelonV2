@@ -103,7 +103,7 @@ public class Elfo : MonoBehaviour
                 transform.rotation = new Quaternion(0,180,0,0);
 
             }
-
+            
             vida -= 10;
             //print("elfoDanificado");
             elfoAnim.SetBool("IsDamaged", true);
@@ -112,7 +112,30 @@ public class Elfo : MonoBehaviour
 
         }
 
+        if(collider.gameObject.tag == "Poder" && elfoAnim.GetBool("IsDamaged") == false) {
+            
+            if(this.transform.position.x > collider.gameObject.transform.position.x) {
+                
+                transform.rotation = new Quaternion(0,0,0,0);
+
+            } else if (this.transform.position.x < collider.gameObject.transform.position.x) {
+
+                transform.rotation = new Quaternion(0,180,0,0);
+
+            }
+            
+            Destroy(collider.gameObject);
+            vida -= 15;
+            //print("elfoDanificado");
+            elfoAnim.SetBool("IsDamaged", true);
+            elfoAnim.SetBool("IsSeeingPlayer", false);
+            timer = timerInicial;
+
+        }
+
     }
+
+    
 
     void OnCollisionEnter2D (Collision2D collision) {
 

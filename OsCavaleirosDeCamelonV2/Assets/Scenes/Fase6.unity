@@ -21408,6 +21408,21 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4260190706915131700, guid: d03a97373bde8284a94a940c7174049d, type: 3}
   m_PrefabInstance: {fileID: 1245701673}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1245701678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1537492806769272493, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+  m_PrefabInstance: {fileID: 1245701673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1245701679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2777096310101557184, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+  m_PrefabInstance: {fileID: 1245701673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1245701680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 638685140249329010, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+  m_PrefabInstance: {fileID: 1245701673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1283923490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21676,6 +21691,11 @@ MonoBehaviour:
   - {fileID: 1880333054}
   - {fileID: 850748260}
   bloqueadorCollider: {fileID: 48695461}
+  bloqueadorCollider2: {fileID: 0}
+  foto:
+  - {fileID: 1245701680}
+  - {fileID: 1245701679}
+  - {fileID: 1245701678}
 --- !u!4 &1481403498
 Transform:
   m_ObjectHideFlags: 0

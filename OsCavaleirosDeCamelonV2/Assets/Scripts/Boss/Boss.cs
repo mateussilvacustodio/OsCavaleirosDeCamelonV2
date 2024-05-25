@@ -158,6 +158,13 @@ public class Boss : MonoBehaviour
             StartCoroutine(LerparValor(5));
         }
 
+        if(collider.gameObject.tag == "Poder" && isOnGround == true && bossAnim.GetBool("Pulo") == false && bossAnim.GetBool("Queda") == false && bossAnim.GetBool("Abaixado") == false) {
+
+            Destroy(collider.gameObject);
+            StartCoroutine(Piscar());
+            StartCoroutine(LerparValor(10));
+        }
+
         if(collider.gameObject.name == "PassarBoss") {
 
             AtivarPersonagem.cutscene = true;

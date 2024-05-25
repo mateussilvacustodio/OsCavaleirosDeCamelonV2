@@ -429,6 +429,11 @@ MonoBehaviour:
   - {fileID: 1350027587}
   - {fileID: 1479210423}
   bloqueadorCollider: {fileID: 1883698457}
+  bloqueadorCollider2: {fileID: 0}
+  foto:
+  - {fileID: 1304517825}
+  - {fileID: 1304517824}
+  - {fileID: 1304517823}
 --- !u!4 &183884158
 Transform:
   m_ObjectHideFlags: 0
@@ -11964,6 +11969,21 @@ GameObject:
 --- !u!1 &1304517822 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3738850523511106422, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+  m_PrefabInstance: {fileID: 1304517820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1304517823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1537492806769272493, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+  m_PrefabInstance: {fileID: 1304517820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1304517824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2777096310101557184, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+  m_PrefabInstance: {fileID: 1304517820}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1304517825 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 638685140249329010, guid: d03a97373bde8284a94a940c7174049d, type: 3}
   m_PrefabInstance: {fileID: 1304517820}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1330627772

@@ -149,6 +149,16 @@ public class Goblin : MonoBehaviour
 
         }
 
+        if(collider.gameObject.tag == "Poder" && goblimAnim.GetBool("IsDamaged") == false) {
+
+            Destroy(collider.gameObject);
+            vida -= 15;
+            goblimAnim.SetBool("IsDamaged", true);
+            goblimAnim.SetBool("IsSeeingPlayer", false);
+            
+
+        }
+
         //ignorar a colisao com outros goblins
         if(collider.gameObject.name == "Goblim") {
 

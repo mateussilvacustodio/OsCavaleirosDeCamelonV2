@@ -12,6 +12,9 @@ public class Itens : MonoBehaviour
     [SerializeField] SpriteRenderer itemSp;
     [SerializeField] int LimitePosMax;
     [SerializeField] int LimitePosMin;
+    [SerializeField] SpriteRenderer esgotadoFilho;
+    [SerializeField] Dinheiro dinheiro;
+    [SerializeField] int posicaoABuscarNoArray;
     
     // Start is called before the first frame update
     void Start()
@@ -48,12 +51,25 @@ public class Itens : MonoBehaviour
         if(posicao < 3 || posicao > 5) {
 
             itemSp.enabled = false;
+            
+            if(esgotadoFilho != null) {
 
+                esgotadoFilho.enabled = false;    
+
+            }
 
         } else {
 
             itemSp.enabled = true;
 
+            if(esgotadoFilho != null) {
+
+                if(dinheiro.arraySpecial[posicaoABuscarNoArray] == 1) {
+
+                    esgotadoFilho.enabled = true; 
+                }
+
+            }
 
         }
         

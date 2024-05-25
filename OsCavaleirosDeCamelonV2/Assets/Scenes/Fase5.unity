@@ -13205,6 +13205,11 @@ MonoBehaviour:
   - {fileID: 2093126577}
   - {fileID: 1282982015}
   bloqueadorCollider: {fileID: 39867405}
+  bloqueadorCollider2: {fileID: 0}
+  foto:
+  - {fileID: 2013050013}
+  - {fileID: 2013050012}
+  - {fileID: 2013050011}
 --- !u!4 &1368792325
 Transform:
   m_ObjectHideFlags: 0
@@ -20663,6 +20668,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 2051596460}
+    - target: {fileID: 8326022607744039625, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 47.899994
+      objectReference: {fileID: 0}
     - target: {fileID: 8907680001248606893, guid: d03a97373bde8284a94a940c7174049d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -20706,6 +20715,21 @@ GameObject:
 --- !u!1 &2013050010 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4260190706915131700, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+  m_PrefabInstance: {fileID: 2013050006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2013050011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1537492806769272493, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+  m_PrefabInstance: {fileID: 2013050006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2013050012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2777096310101557184, guid: d03a97373bde8284a94a940c7174049d, type: 3}
+  m_PrefabInstance: {fileID: 2013050006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2013050013 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 638685140249329010, guid: d03a97373bde8284a94a940c7174049d, type: 3}
   m_PrefabInstance: {fileID: 2013050006}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2043830649

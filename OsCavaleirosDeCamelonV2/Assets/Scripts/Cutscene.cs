@@ -54,7 +54,15 @@ public class Cutscene : MonoBehaviour
 
             pularDialogo();
 
-        }        
+        }
+
+        //pular cutscene
+
+        if(Input.GetKeyDown(KeyCode.Escape)) {
+
+            SceneManager.LoadScene(cena);
+
+        }  
 
     }
 

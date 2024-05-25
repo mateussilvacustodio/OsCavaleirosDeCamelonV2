@@ -15,6 +15,12 @@ public class CharacterMoviment : MonoBehaviour
     [SerializeField] bool isOnGround;
     [Header("Ataque")]
     public BoxCollider2D armaCollider;
+    [Header("Especiais")]
+    [SerializeField] float tempoSpecial;
+    [SerializeField] float delaySpecial;
+    [SerializeField] SpriteRenderer barraSpecial;
+    [SerializeField] GameObject poder;
+    [SerializeField] Transform posicaoSpecial;
     [Header("Dano")]
     [SerializeField] float KbX;
     [SerializeField] float KbY;
@@ -76,6 +82,50 @@ public class CharacterMoviment : MonoBehaviour
 
         }
 
+        //especiais
+
+        if(dinheiro.arraySpecial[PlayerPrefs.GetInt("PersonagemEscolhido")] == 1) {
+
+            if(Input.GetKey(KeyCode.C) && characterAnim.GetBool("IsJumping") == false && characterAnim.GetBool("IsDowning") == false) {
+
+                tempoSpecial+=0.5f; 
+
+            }
+
+            if(tempoSpecial <= 200) {
+
+                barraSpecial.size = new Vector2(tempoSpecial / 200, barraSpecial.size.y);
+
+            }
+
+            if(Input.GetKeyUp(KeyCode.C)) {
+
+                if(characterLife.mana >= 20 && tempoSpecial >= 200) {
+
+                    Invoke("criarPoder", delaySpecial);
+                    StartCoroutine(characterLife.LerparMana(20));
+                    characterAnim.SetBool("IsAttacking", true);
+
+                }
+                
+                tempoSpecial = 0;
+
+            }
+        }
+
+        //curar
+        if(Input.GetKeyDown(KeyCode.V)) {
+
+            if(dinheiro.quantidadePocoes > 0 && characterLife.vida < characterLife.vidaMax) {
+
+                StartCoroutine(characterLife.LerparValor(-10));
+                characterLife.vidaVerdadeira += 10;
+                dinheiro.quantidadePocoes --;
+
+            }
+
+        }         
+
         //animacoes
         if(horizontal == 0) {
 
@@ -128,7 +178,6 @@ public class CharacterMoviment : MonoBehaviour
             Destroy(collision.gameObject);
 
         }
-
 
     }
 
@@ -309,6 +358,12 @@ public class CharacterMoviment : MonoBehaviour
     public void iniciarAtaque() {
 
         armaCollider.enabled = true;
+
+    }
+
+    public void criarPoder() {
+
+        Instantiate(poder, posicaoSpecial.position, transform.rotation);
 
     }
 

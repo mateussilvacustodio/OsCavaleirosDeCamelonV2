@@ -818,9 +818,10 @@ MonoBehaviour:
   ato: 0
   nomesPlayers: Ragnar
   falasPlayers:
-  - Ola, estou tentando fazer funcionar o sistema de dialogos
-  - Sera que esta funcionando
-  - Espero que sim
+  - "O que \xE9 essa infesta\xE7\xE3o?"
+  - O rei...
+  - E a princesa...
+  - Espero que estejam bem.
   falasPlayersIndex: 0
   typeSpeed: 0.02
   dialogoObj: {fileID: 52447525}

@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class AtivarPersonagem : MonoBehaviour
 {
@@ -9,10 +12,12 @@ public class AtivarPersonagem : MonoBehaviour
     public static bool cutscene;
     [SerializeField] BoxCollider2D bloqueadorCollider;
     [SerializeField] BoxCollider2D bloqueadorCollider2;
+    [SerializeField] GameObject[] foto;
     // Start is called before the first frame update
     void Awake() {
 
       Character[PlayerPrefs.GetInt("PersonagemEscolhido")].SetActive(true);
+      foto[PlayerPrefs.GetInt("PersonagemEscolhido")].SetActive(true);
       cutscene = true;
 
     }
