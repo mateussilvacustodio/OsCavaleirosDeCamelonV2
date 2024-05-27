@@ -10,20 +10,31 @@ public class Bau : MonoBehaviour
     [SerializeField] Rigidbody2D QuantMoedas;
     [SerializeField] MeshRenderer QuantMoedasRd;
     [SerializeField] Dinheiro dinheiro;
+    [SerializeField] SpriteRenderer botaoSp;
     
     void Update()
     {
 
-        if(podeAbrir == true && Input.GetButtonDown("Fire2")) {
+        if(podeAbrir == true) {
 
-            bauAnim.SetBool("IsOpen", true);
-            podeAbrir = false;
-            StartCoroutine(dinheiro.LerparValor(5));
-            QuantMoedas2.velocity = new Vector2(0, 2.5f);
-            Destroy(QuantMoedas2.gameObject, 0.6f);
-            QuantMoedasRd.enabled = true;
-            QuantMoedas.velocity = new Vector2(0, 2.5f);
-            Destroy(QuantMoedas.gameObject, 0.6f);
+            botaoSp.enabled = true;
+            
+            if(Input.GetButtonDown("Fire2")) {
+
+                bauAnim.SetBool("IsOpen", true);
+                podeAbrir = false;
+                StartCoroutine(dinheiro.LerparValor(5));
+                QuantMoedas2.velocity = new Vector2(0, 2.5f);
+                Destroy(QuantMoedas2.gameObject, 0.6f);
+                QuantMoedasRd.enabled = true;
+                QuantMoedas.velocity = new Vector2(0, 2.5f);
+                Destroy(QuantMoedas.gameObject, 0.6f);
+
+            }
+
+        } else {
+
+            botaoSp.enabled = false;
 
         }
 

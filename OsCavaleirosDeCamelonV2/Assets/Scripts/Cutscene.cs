@@ -50,7 +50,7 @@ public class Cutscene : MonoBehaviour
             
         }
 
-        if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.KeypadEnter)) {
+        if(Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Return)) {
 
             pularDialogo();
 
