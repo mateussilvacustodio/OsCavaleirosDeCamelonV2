@@ -19,6 +19,7 @@ public class Espada : MonoBehaviour
     void Start()
     {
         transform.position = Vector3.MoveTowards(transform.position, fasesTransform[0].position, speed * Time.deltaTime);
+	Time.timeScale = 1f;
     }
 
     // Update is called once per frame
