@@ -82,7 +82,8 @@ public class CharacterMoviment : MonoBehaviour
 
             if(Input.GetKey(KeyCode.C) && characterAnim.GetBool("IsJumping") == false && characterAnim.GetBool("IsDowning") == false) {
 
-                tempoSpecial+=0.5f; 
+                //tempoSpecial+=0.5f;
+                tempoSpecial += Time.deltaTime * 200;
 
             }
 
